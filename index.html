@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cashcare Financials — Tax Consultants & Auditors</title>
-  <meta name="description" content="Cashcare Financials Consultancy — expert tax consultancy, auditing, bookkeeping, KRA income tax reports, VAT, PAYE, and financial advisory services." />
+  <title>Cashcare Financials: Tax Consultants & Auditors</title>
+  <meta name="description" content="Cashcare Financials Consultancy: expert tax consultancy, auditing, bookkeeping, KRA income tax reports, VAT, PAYE, and financial advisory services." />
   <meta property="og:title" content="Cashcare Financials Consultancy" />
   <meta property="og:description" content="Precision. Purpose. Partnership. Expert financial consultancy in Kenya." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -372,7 +372,6 @@
     /* ── TRUST BAR ────────────────────────────────────── */
     #trust-bar {
       background: var(--sand);
-      padding: 20px 5%;
       border-bottom: 1px solid rgba(0,0,0,0.05);
     }
     .trust-inner {
@@ -382,6 +381,7 @@
       align-items: center;
       gap: 48px;
       flex-wrap: wrap;
+      padding: 20px 5%;
     }
     .trust-label {
       font-size: 11px;
@@ -406,6 +406,101 @@
       gap: 7px;
     }
     .trust-item svg { color: var(--gold); }
+
+    /* ── TRUST BAR EXPANDED ──────────────────────────── */
+    .trust-inner-expanded {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: flex;
+      align-items: flex-start;
+      gap: 48px;
+      flex-wrap: wrap;
+      padding: 36px 5%;
+    }
+    .trust-credentials {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      min-width: 220px;
+    }
+    .trust-divider-v {
+      width: 1px;
+      background: rgba(0,0,0,0.08);
+      align-self: stretch;
+      min-height: 80px;
+    }
+    .trust-founders {
+      flex: 1;
+      min-width: 280px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .trust-founder-cards {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .trust-founder-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      flex: 1;
+      min-width: 240px;
+    }
+    .trust-founder-photo {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: var(--green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      overflow: hidden;
+      border: 2px solid rgba(201,150,59,0.3);
+    }
+    .trust-founder-photo span {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.03em;
+    }
+    .trust-founder-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .trust-founder-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .trust-founder-info strong {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.3;
+    }
+    .trust-founder-info span {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 4px;
+    }
+    .trust-founder-info p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.55;
+      margin: 0;
+    }
+    @media (max-width: 768px) {
+      .trust-divider-v { display: none; }
+      .trust-founder-card { min-width: 100%; }
+    }
 
     /* ── SECTION WRAPPER ─────────────────────────────── */
     .section-wrap {
@@ -1104,7 +1199,7 @@
         <em>Precision</em> &amp; Purpose.
       </h1>
       <p class="hero-sub">
-        Expert tax consultancy, auditing, and financial advisory — built for Kenyan businesses and individuals who want more than generic advice.
+        Expert tax consultancy, auditing, and financial advisory, built for Kenyan businesses and individuals who want more than generic advice.
       </p>
       <div class="hero-btns">
         <a href="#contact" class="btn-primary">
@@ -1119,26 +1214,56 @@
     </div>
   </section>
 
-  <!-- ── TRUST BAR ─────────────────────────────────── -->
-  <div id="trust-bar" aria-label="Trust indicators">
-    <div class="trust-inner">
-      <span class="trust-label">Trusted for</span>
-      <div class="trust-items">
-        <div class="trust-item">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-          KRA Registered Consultants
+  <!-- ── WHY CASHCARE / INTRO STRIP ──────────────────── -->
+  <div id="trust-bar" aria-label="Why Cashcare">
+    <div class="trust-inner-expanded">
+      <div class="trust-credentials">
+        <span class="trust-label">Trusted for</span>
+        <div class="trust-items">
+          <div class="trust-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            KRA Registered Consultants
+          </div>
+          <div class="trust-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            ICPAK-Aligned Practices
+          </div>
+          <div class="trust-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Kenya Data Protection Compliant
+          </div>
+          <div class="trust-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Serving Clients Since 2014
+          </div>
         </div>
-        <div class="trust-item">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-          ICPAK-Aligned Practices
-        </div>
-        <div class="trust-item">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-          Kenya Data Protection Compliant
-        </div>
-        <div class="trust-item">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-          Serving Clients Since 2014
+      </div>
+      <div class="trust-divider-v" aria-hidden="true"></div>
+      <div class="trust-founders">
+        <span class="trust-label">The Team Behind Your Finances</span>
+        <div class="trust-founder-cards">
+          <div class="trust-founder-card">
+            <div class="trust-founder-photo" aria-label="Photo of Ochieng Ngara">
+              <!-- Replace src with actual photo: <img src="ochieng.jpg" alt="Ochieng Ngara"> -->
+              <span>ON</span>
+            </div>
+            <div class="trust-founder-info">
+              <strong>Ochieng&#8217; Ng&#8217;ara</strong>
+              <span>Founder &amp; Lead Consultant</span>
+              <p>CPA-K certified with over a decade navigating KRA compliance and financial strategy for Kenyan businesses.</p>
+            </div>
+          </div>
+          <div class="trust-founder-card">
+            <div class="trust-founder-photo" aria-label="Photo of Shadrack Kojack">
+              <!-- Replace src with actual photo: <img src="shadrack.jpg" alt="Shadrack Kojack"> -->
+              <span>SK</span>
+            </div>
+            <div class="trust-founder-info">
+              <strong>Shadrack Kojack</strong>
+              <span>Co-Founder &amp; Audit Lead</span>
+              <p>Specialist in auditing and business model development with deep experience across SMEs and growing enterprises.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -1150,7 +1275,7 @@
       <div class="section-header reveal">
         <span class="label">What We Do</span>
         <h2>Nine Services. One Trusted Partner.</h2>
-        <p>From KRA compliance to building full business models — we handle the financial complexity so you can focus on growing.</p>
+        <p>From KRA compliance to building full business models, we handle the financial complexity so you can focus on growing.</p>
       </div>
       <div class="services-grid">
 
@@ -1169,7 +1294,7 @@
             <svg viewBox="0 0 24 24"><path d="M3 3h18v18H3z" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
           </div>
           <h3>Auditing</h3>
-          <p>Independent audits that give you — and your stakeholders — full confidence in your financial statements and internal controls.</p>
+          <p>Independent audits that give you, and your stakeholders, full confidence in your financial statements and internal controls.</p>
         </article>
 
         <article class="service-card reveal reveal-delay-3">
@@ -1178,7 +1303,7 @@
             <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
           </div>
           <h3>Professional Bookkeeping</h3>
-          <p>Accurate, up-to-date books that reflect the true health of your business — monthly, quarterly, or on a catch-up basis.</p>
+          <p>Accurate, up-to-date books that reflect the true health of your business, monthly, quarterly, or on a catch-up basis.</p>
         </article>
 
         <article class="service-card reveal reveal-delay-1">
@@ -1187,7 +1312,7 @@
             <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 3H8l-2 4h12l-2-4z"/></svg>
           </div>
           <h3>KRA Income Tax Reports</h3>
-          <p>Timely and accurate income tax return preparation and submission — avoiding penalties and keeping your PIN in good standing.</p>
+          <p>Timely and accurate income tax return preparation and submission, avoiding penalties and keeping your PIN in good standing.</p>
         </article>
 
         <article class="service-card reveal reveal-delay-2">
@@ -1196,7 +1321,7 @@
             <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
           </div>
           <h3>VAT &amp; Monthly PAYE</h3>
-          <p>End-to-end VAT registration, filing, and PAYE payroll management — every return filed correctly and on time, every month.</p>
+          <p>End-to-end VAT registration, filing, and PAYE payroll management, every return filed correctly and on time, every month.</p>
         </article>
 
         <article class="service-card reveal reveal-delay-3">
@@ -1205,7 +1330,7 @@
             <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
           <h3>Amnesty Filing</h3>
-          <p>Behind on KRA filings? We manage the amnesty process from start to finish — resolving arrears and restoring your compliance status.</p>
+          <p>Behind on KRA filings? We manage the amnesty process from start to finish, resolving arrears and restoring your compliance status.</p>
         </article>
 
         <article class="service-card reveal reveal-delay-1">
@@ -1214,7 +1339,7 @@
             <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
           </div>
           <h3>Budgeting &amp; Cashflow</h3>
-          <p>Forward-looking budgets and cashflow projections that help you make smarter decisions — whether you're planning growth or managing a tight quarter.</p>
+          <p>Forward-looking budgets and cashflow projections that help you make smarter decisions, whether you're planning growth or managing a tight quarter.</p>
         </article>
 
         <article class="service-card reveal reveal-delay-2">
@@ -1232,7 +1357,7 @@
             <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
           </div>
           <h3>Business Model Building</h3>
-          <p>From startup feasibility to investor-ready financial models — we build the numbers that tell the real story of your business's potential.</p>
+          <p>From startup feasibility to investor-ready financial models, we build the numbers that tell the real story of your business's potential.</p>
         </article>
 
       </div>
@@ -1246,11 +1371,11 @@
         <div class="about-img-wrap reveal">
           <div class="about-img-box">
             <div class="about-img-initials" aria-hidden="true">
-              <span class="initials-big">CF</span>
+              <span class="initials-big">ON</span>
             </div>
             <div class="about-img-caption">
-              <h4>Cashcare Financials</h4>
-              <p>Nairobi, Kenya · Est. 2014</p>
+              <h4>Ochieng&#8217; Ng&#8217;ara</h4>
+              <p>Founder, Cashcare Financials</p>
             </div>
           </div>
           <div class="about-gold-badge" aria-label="10 years of experience">
@@ -1262,11 +1387,11 @@
           <span class="label">About Us</span>
           <h2>We Started Because You Deserve Better Than Generic Advice.</h2>
           <p>We built Cashcare Financials because we kept seeing the same thing: smart business owners and hardworking individuals making financial decisions without proper guidance. Not boilerplate compliance. Actual strategy.</p>
-          <p>Our team combines deep KRA knowledge with real-world business experience. We know the Kenyan tax landscape — the deadlines, the amendments, the amnesty windows — and we use that knowledge to protect you and help you grow.</p>
+          <p>Our team combines deep KRA knowledge with real-world business experience. We know the Kenyan tax landscape, the deadlines, the amendments, the amnesty windows, and we use that knowledge to protect you and help you grow.</p>
           <div class="about-blockquote">
-            <p>"We don't just file your returns. We make sure your numbers are telling the right story — to KRA, to investors, and to you."</p>
+            <p>"We don't just file your returns. We make sure your numbers are telling the right story, to KRA, to investors, and to you."</p>
           </div>
-          <div class="signature">B. Wanjigi</div>
+          <div class="signature">Ochieng&#8217; Ng&#8217;ara</div>
           <p style="font-size:13px; color: var(--muted); margin-top: 6px;">Founder, Cashcare Financials</p>
           <a href="#contact" class="btn-primary" style="margin-top: 28px; display:inline-flex;">
             Work With Us <span class="arrow">→</span>
@@ -1317,7 +1442,7 @@
           <div class="stars" aria-label="5 stars">
             <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
           </div>
-          <p class="testimonial-quote">"Cashcare sorted out three years of overdue KRA filings for my shop. They handled everything — I didn't have to stress for a single day. My PIN is clean and I finally sleep at night."</p>
+          <p class="testimonial-quote">"Cashcare sorted out three years of overdue KRA filings for my shop. They handled everything, I didn't have to stress for a single day. My PIN is clean and I finally sleep at night."</p>
           <div class="testimonial-author">
             <div class="author-avatar" aria-hidden="true">JM</div>
             <div>
@@ -1345,7 +1470,7 @@
           <div class="stars" aria-label="5 stars">
             <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
           </div>
-          <p class="testimonial-quote">"Our monthly PAYE and VAT used to be a nightmare. Now it's completely off our plate. Cashcare is proactive — they remind us, file on time, and explain everything in plain language."</p>
+          <p class="testimonial-quote">"Our monthly PAYE and VAT used to be a nightmare. Now it's completely off our plate. Cashcare is proactive, they remind us, file on time, and explain everything in plain language."</p>
           <div class="testimonial-author">
             <div class="author-avatar" aria-hidden="true">PO</div>
             <div>
@@ -1385,7 +1510,7 @@
 
         <article class="result-card reveal reveal-delay-1">
           <span class="result-tag">Amnesty Filing</span>
-          <h3>Logistics SME — KRA Compliance Restored</h3>
+          <h3>Logistics SME, KRA Compliance Restored</h3>
           <p>A Nairobi-based logistics company with 4 years of unfiled returns faced potential business suspension. We managed a full amnesty filing across all return types, negotiated penalty waivers, and restored full compliance status.</p>
           <div class="result-outcome">
             <span class="result-big">4yrs</span>
@@ -1395,7 +1520,7 @@
 
         <article class="result-card reveal reveal-delay-2">
           <span class="result-tag">Business Model</span>
-          <h3>Restaurant Group — Bank Financing Secured</h3>
+          <h3>Restaurant Group, Bank Financing Secured</h3>
           <p>A growing food business needed a bankable financial model to secure a KES 8M expansion loan. We built a 3-year model with scenario analysis, unit economics, and a clear narrative for the lender.</p>
           <div class="result-outcome">
             <span class="result-big">KES 8M</span>
@@ -1405,7 +1530,7 @@
 
         <article class="result-card reveal reveal-delay-3">
           <span class="result-tag">Tax &amp; Bookkeeping</span>
-          <h3>Retail Chain — Tax Savings Identified</h3>
+          <h3>Retail Chain, Tax Savings Identified</h3>
           <p>During a bookkeeping engagement for a 3-branch retail client, our review identified KES 240K in overpaid tax across two years. We filed an amendment and secured a refund while restructuring their VAT process.</p>
           <div class="result-outcome">
             <span class="result-big">KES 240K</span>
@@ -1443,7 +1568,7 @@
             <span class="insight-date">Apr 2025</span>
           </div>
           <h3>The 5 Most Common VAT Errors Kenyan SMEs Make</h3>
-          <p>From wrong tax codes to missed input claims — these are the VAT mistakes that quietly cost businesses money, and how to fix them.</p>
+          <p>From wrong tax codes to missed input claims, these are the VAT mistakes that quietly cost businesses money, and how to fix them.</p>
           <a href="#contact" class="insight-read">Read More →</a>
         </article>
 
@@ -1453,7 +1578,7 @@
             <span class="insight-date">Mar 2025</span>
           </div>
           <h3>Building a Cashflow Projection Your Bank Will Actually Believe</h3>
-          <p>Most cashflow projections are overly optimistic and instantly dismissed. Here's what lenders actually look for — and how to build a model that holds up.</p>
+          <p>Most cashflow projections are overly optimistic and instantly dismissed. Here's what lenders actually look for, and how to build a model that holds up.</p>
           <a href="#contact" class="insight-read">Read More →</a>
         </article>
 
@@ -1479,7 +1604,7 @@
         <div class="contact-info reveal">
           <span class="label">Get In Touch</span>
           <h2>Let's Talk About Your Finances.</h2>
-          <p>We'd love to hear from you. Whether you need to sort out a compliance issue or build a full financial strategy — the conversation starts here.</p>
+          <p>We'd love to hear from you. Whether you need to sort out a compliance issue or build a full financial strategy, the conversation starts here.</p>
 
           <div class="contact-detail">
             <div class="contact-icon" aria-hidden="true">
@@ -1574,7 +1699,7 @@
       <div class="footer-brand">
         <div class="footer-logo">Cashcare Financials</div>
         <div class="footer-tagline">Consultancy</div>
-        <p>Expert tax, audit, and financial advisory services for Kenyan businesses and individuals — delivered with precision and care.</p>
+        <p>Expert tax, audit, and financial advisory services for Kenyan businesses and individuals, delivered with precision and care.</p>
         <div class="footer-socials">
           <a href="#" class="footer-social-link" aria-label="LinkedIn">
             <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
