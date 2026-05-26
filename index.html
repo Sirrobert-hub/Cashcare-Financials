@@ -1,211 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cashcare Financials: Tax Consultants & Auditors</title>
-  <meta name="description" content="Cashcare Financials Consultancy: expert tax consultancy, auditing, bookkeeping, KRA income tax reports, VAT, PAYE, and financial advisory services." />
-  <meta property="og:title" content="Cashcare Financials Consultancy" />
-  <meta property="og:description" content="Precision. Purpose. Partnership. Expert financial consultancy in Kenya." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@1,400;1,500&family=Dancing+Script:wght@600&display=swap" rel="stylesheet" />
-
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cashcare Financials: Tax Consultants &amp; Auditors</title>
+  <meta name="description" content="Cashcare Financials Consultancy: expert tax consultancy, auditing, bookkeeping, KRA income tax reports, VAT, PAYE, and financial advisory services."/>
+  <meta property="og:title" content="Cashcare Financials Consultancy"/>
+  <meta property="og:description" content="Precision. Purpose. Partnership. Expert financial consultancy in Kenya."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@1,400;1,500&family=Dancing+Script:wght@600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="shared.css"/>
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --green:   #1A3C34;
-      --green-light: #234d42;
-      --gold:    #C9963B;
-      --gold-dark: #A67A2A;
-      --cream:   #F8F5EF;
-      --sand:    #EDE8DF;
-      --text:    #1C1C1A;
-      --muted:   #6B6456;
-      --white:   #ffffff;
-      --radius:  8px;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--cream);
-      color: var(--text);
-      overflow-x: hidden;
-      line-height: 1.7;
-    }
-
-    /* ── NOISE TEXTURE OVERLAY ─────────────────────────── */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 9999;
-      opacity: 0.6;
-    }
-
-    /* ── TYPOGRAPHY ───────────────────────────────────── */
-    h1, h2 { font-family: 'Playfair Display', serif; }
-    h1 { font-size: clamp(38px, 5.5vw, 70px); line-height: 1.08; font-weight: 700; }
-    h2 { font-size: clamp(32px, 4vw, 52px); line-height: 1.15; font-weight: 600; }
-    h3 { font-size: clamp(18px, 2vw, 24px); font-weight: 600; line-height: 1.35; }
-    p { font-size: 17px; line-height: 1.75; color: var(--muted); }
-    .label {
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--gold);
-    }
-
-    /* ── NAVBAR ───────────────────────────────────────── */
-    #navbar {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 22px 5%;
-      transition: background 0.35s ease, box-shadow 0.35s ease, padding 0.35s ease;
-    }
-    #navbar.scrolled {
-      background: var(--cream);
-      box-shadow: 0 1px 0 rgba(0,0,0,0.07);
-      padding: 14px 5%;
-    }
-    .nav-logo {
-      display: flex;
-      flex-direction: column;
-      gap: 1px;
-      text-decoration: none;
-    }
-    .nav-logo-top {
-      font-family: 'Playfair Display', serif;
-      font-size: 20px;
-      font-weight: 700;
-      color: var(--cream);
-      transition: color 0.35s;
-      line-height: 1;
-    }
-    #navbar.scrolled .nav-logo-top { color: var(--green); }
-    .nav-logo-sub {
-      font-size: 10px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.6);
-      transition: color 0.35s;
-    }
-    #navbar.scrolled .nav-logo-sub { color: var(--muted); }
-
-    .nav-links {
-      display: flex;
-      gap: 36px;
-      list-style: none;
-    }
-    .nav-links a {
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 500;
-      color: rgba(255,255,255,0.85);
-      transition: color 0.2s;
-      position: relative;
-      padding-bottom: 4px;
-    }
-    #navbar.scrolled .nav-links a { color: var(--text); }
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0;
-      width: 0; height: 2px;
-      background: var(--gold);
-      transition: width 0.25s ease;
-    }
-    .nav-links a:hover::after,
-    .nav-links a.active::after { width: 100%; }
-
-    .nav-cta {
-      background: var(--gold);
-      color: var(--white) !important;
-      padding: 10px 22px;
-      border-radius: 4px;
-      font-weight: 600 !important;
-      font-size: 14px !important;
-      text-decoration: none;
-      transition: background 0.2s ease, transform 0.2s ease !important;
-      white-space: nowrap;
-    }
-    .nav-cta:hover { background: var(--gold-dark) !important; transform: translateY(-1px); }
-    .nav-cta::after { display: none !important; }
-
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      padding: 4px;
-      background: none;
-      border: none;
-    }
-    .hamburger span {
-      display: block;
-      width: 24px;
-      height: 2px;
-      background: var(--cream);
-      transition: background 0.35s, transform 0.3s, opacity 0.3s;
-      border-radius: 2px;
-    }
-    #navbar.scrolled .hamburger span { background: var(--text); }
-
-    /* Mobile drawer */
-    #mobile-drawer {
-      position: fixed;
-      top: 0; right: -100%;
-      width: min(360px, 100vw);
-      height: 100vh;
-      background: var(--green);
-      z-index: 2000;
-      padding: 80px 40px 40px;
-      display: flex;
-      flex-direction: column;
-      gap: 28px;
-      transition: right 0.4s cubic-bezier(0.4,0,0.2,1);
-    }
-    #mobile-drawer.open { right: 0; }
-    #mobile-drawer a {
-      font-family: 'Playfair Display', serif;
-      font-size: 28px;
-      color: var(--cream);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    #mobile-drawer a:hover { color: var(--gold); }
-    #drawer-close {
-      position: absolute;
-      top: 24px; right: 24px;
-      background: none;
-      border: none;
-      color: var(--cream);
-      font-size: 28px;
-      cursor: pointer;
-      line-height: 1;
-    }
-    #drawer-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.5);
-      z-index: 1999;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.4s;
-    }
-    #drawer-overlay.open { opacity: 1; pointer-events: all; }
-
-    /* ── HERO ─────────────────────────────────────────── */
+    /* HERO - green full viewport */
     #hero {
       min-height: 100vh;
       background: var(--green);
@@ -214,1638 +21,612 @@
       align-items: center;
       overflow: hidden;
     }
-    .hero-geo {
-      position: absolute;
-      inset: 0;
-      overflow: hidden;
-      pointer-events: none;
-    }
+    .hero-geo { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
     .hero-geo::before {
-      content: '';
-      position: absolute;
-      right: -10%;
-      top: 10%;
-      width: 55vw;
-      height: 55vw;
-      max-width: 700px;
-      max-height: 700px;
-      border-radius: 50%;
-      border: 1px solid rgba(201,150,59,0.15);
+      content: ''; position: absolute; right: -10%; top: 10%;
+      width: 55vw; height: 55vw; max-width: 700px; max-height: 700px;
+      border-radius: 50%; border: 1px solid rgba(201,150,59,0.15);
     }
     .hero-geo::after {
-      content: '';
-      position: absolute;
-      right: -5%;
-      top: 15%;
-      width: 42vw;
-      height: 42vw;
-      max-width: 540px;
-      max-height: 540px;
-      border-radius: 50%;
-      border: 1px solid rgba(201,150,59,0.1);
+      content: ''; position: absolute; right: -5%; top: 15%;
+      width: 42vw; height: 42vw; max-width: 540px; max-height: 540px;
+      border-radius: 50%; border: 1px solid rgba(201,150,59,0.1);
     }
     .hero-line {
-      position: absolute;
-      bottom: 0; left: 0;
-      width: 100%;
-      height: 1px;
+      position: absolute; bottom: 0; left: 0; width: 100%; height: 1px;
       background: linear-gradient(90deg, transparent, rgba(201,150,59,0.4), transparent);
     }
     .hero-gold-bar {
-      position: absolute;
-      left: 5%;
-      top: 0;
-      bottom: 0;
-      width: 3px;
+      position: absolute; left: 5%; top: 0; bottom: 0; width: 3px;
       background: linear-gradient(180deg, transparent, var(--gold) 30%, var(--gold) 70%, transparent);
       opacity: 0.35;
     }
-
     .hero-inner {
-      position: relative;
-      z-index: 2;
-      padding: 120px 5% 80px;
-      max-width: 1300px;
-      margin: 0 auto;
-      width: 100%;
+      position: relative; z-index: 2;
+      padding: 120px 5% 80px; max-width: 1300px; margin: 0 auto; width: 100%;
     }
     .hero-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 28px;
-      opacity: 0;
-      animation: fadeUp 0.8s ease 0.2s forwards;
+      display: inline-flex; align-items: center; gap: 10px; margin-bottom: 28px;
+      opacity: 0; animation: fadeUp 0.8s ease 0.2s forwards;
     }
-    .hero-label span {
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--gold);
-    }
-    .hero-label::before {
-      content: '';
-      display: block;
-      width: 32px;
-      height: 1px;
-      background: var(--gold);
-    }
+    .hero-label span { font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); }
+    .hero-label::before { content: ''; display: block; width: 32px; height: 1px; background: var(--gold); }
     .hero-h1 {
-      color: var(--cream);
-      max-width: 800px;
-      opacity: 0;
-      animation: fadeUp 0.9s ease 0.35s forwards;
+      color: var(--cream); max-width: 800px;
+      opacity: 0; animation: fadeUp 0.9s ease 0.35s forwards;
     }
-    .hero-h1 em {
-      font-style: italic;
-      color: var(--gold);
-    }
+    .hero-h1 em { font-style: italic; color: var(--gold); }
     .hero-sub {
-      margin-top: 24px;
-      font-size: 18px;
-      color: rgba(248,245,239,0.7);
-      max-width: 520px;
-      line-height: 1.65;
-      opacity: 0;
-      animation: fadeUp 0.9s ease 0.5s forwards;
+      margin-top: 24px; font-size: 18px; color: rgba(248,245,239,0.7);
+      max-width: 520px; line-height: 1.65;
+      opacity: 0; animation: fadeUp 0.9s ease 0.5s forwards;
     }
     .hero-btns {
-      margin-top: 44px;
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-      opacity: 0;
-      animation: fadeUp 0.9s ease 0.65s forwards;
+      margin-top: 44px; display: flex; gap: 16px; flex-wrap: wrap;
+      opacity: 0; animation: fadeUp 0.9s ease 0.65s forwards;
     }
-    .btn-primary {
-      background: var(--gold);
-      color: var(--white);
-      padding: 15px 32px;
-      border-radius: 4px;
-      font-weight: 600;
-      font-size: 15px;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      transition: background 0.2s, transform 0.2s;
-    }
-    .btn-primary:hover { background: var(--gold-dark); transform: translateY(-2px); }
-    .btn-primary .arrow { transition: transform 0.2s; }
-    .btn-primary:hover .arrow { transform: translateX(4px); }
-
-    .btn-ghost {
-      background: transparent;
-      color: var(--cream);
-      padding: 15px 32px;
-      border-radius: 4px;
-      border: 1px solid rgba(248,245,239,0.35);
-      font-weight: 500;
-      font-size: 15px;
-      text-decoration: none;
+    .btn-ghost-hero {
+      background: transparent; color: var(--cream);
+      padding: 15px 32px; border-radius: 4px; border: 1px solid rgba(248,245,239,0.35);
+      font-weight: 500; font-size: 15px; text-decoration: none;
       transition: border-color 0.2s, background 0.2s;
     }
-    .btn-ghost:hover { border-color: var(--gold); background: rgba(201,150,59,0.08); }
-
+    .btn-ghost-hero:hover { border-color: var(--gold); background: rgba(201,150,59,0.08); }
     .hero-scroll {
-      margin-top: 80px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      opacity: 0;
-      animation: fadeIn 1s ease 1.1s forwards;
+      margin-top: 80px; display: flex; align-items: center; gap: 10px;
+      opacity: 0; animation: fadeIn 1s ease 1.1s forwards;
     }
-    .hero-scroll-line {
-      width: 1px;
-      height: 40px;
-      background: linear-gradient(180deg, var(--gold), transparent);
-    }
-    .hero-scroll span {
-      font-size: 11px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(248,245,239,0.45);
-      writing-mode: vertical-rl;
-    }
+    .hero-scroll-line { width: 1px; height: 40px; background: linear-gradient(180deg, var(--gold), transparent); }
+    .hero-scroll span { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(248,245,239,0.45); writing-mode: vertical-rl; }
 
-    /* ── TRUST BAR ────────────────────────────────────── */
-    #trust-bar {
-      background: var(--sand);
-      border-bottom: 1px solid rgba(0,0,0,0.05);
-    }
-    .trust-inner {
-      max-width: 1300px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      gap: 48px;
-      flex-wrap: wrap;
-      padding: 20px 5%;
-    }
-    .trust-label {
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--muted);
-      white-space: nowrap;
-    }
-    .trust-items {
-      display: flex;
-      gap: 40px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-    .trust-item {
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--muted);
-      display: flex;
-      align-items: center;
-      gap: 7px;
-    }
-    .trust-item svg { color: var(--gold); }
-
-    /* ── TRUST BAR EXPANDED ──────────────────────────── */
+    /* TRUST BAR - expanded with founder cards */
+    #trust-bar { background: var(--sand); border-bottom: 1px solid rgba(0,0,0,0.05); }
     .trust-inner-expanded {
-      max-width: 1300px;
-      margin: 0 auto;
-      display: flex;
-      align-items: flex-start;
-      gap: 48px;
-      flex-wrap: wrap;
-      padding: 36px 5%;
+      max-width: 1300px; margin: 0 auto;
+      display: flex; align-items: flex-start; gap: 48px; flex-wrap: wrap; padding: 36px 5%;
     }
-    .trust-credentials {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      min-width: 220px;
-    }
-    .trust-divider-v {
-      width: 1px;
-      background: rgba(0,0,0,0.08);
-      align-self: stretch;
-      min-height: 80px;
-    }
-    .trust-founders {
-      flex: 1;
-      min-width: 280px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    .trust-founder-cards {
-      display: flex;
-      gap: 24px;
-      flex-wrap: wrap;
-    }
-    .trust-founder-card {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      flex: 1;
-      min-width: 240px;
-    }
+    .trust-credentials { display: flex; flex-direction: column; gap: 14px; min-width: 220px; }
+    .trust-label { font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+    .trust-items { display: flex; flex-direction: column; gap: 10px; }
+    .trust-item { font-size: 13px; font-weight: 500; color: var(--muted); display: flex; align-items: center; gap: 7px; }
+    .trust-item svg { color: var(--gold); flex-shrink: 0; }
+    .trust-divider-v { width: 1px; background: rgba(0,0,0,0.08); align-self: stretch; min-height: 80px; }
+    .trust-founders { flex: 1; min-width: 280px; display: flex; flex-direction: column; gap: 16px; }
+    .trust-founder-cards { display: flex; gap: 24px; flex-wrap: wrap; }
+    .trust-founder-card { display: flex; align-items: flex-start; gap: 14px; flex: 1; min-width: 240px; }
     .trust-founder-photo {
-      width: 64px;
-      height: 64px;
-      border-radius: 50%;
-      background: var(--green);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      overflow: hidden;
-      border: 2px solid rgba(201,150,59,0.3);
+      width: 64px; height: 64px; border-radius: 50%; background: var(--green);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; overflow: hidden; border: 2px solid rgba(201,150,59,0.3);
     }
-    .trust-founder-photo span {
-      font-family: 'Playfair Display', serif;
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--gold);
-      letter-spacing: 0.03em;
-    }
-    .trust-founder-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .trust-founder-info {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-    .trust-founder-info strong {
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--text);
-      line-height: 1.3;
-    }
-    .trust-founder-info span {
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 4px;
-    }
-    .trust-founder-info p {
-      font-size: 13px;
-      color: var(--muted);
-      line-height: 1.55;
-      margin: 0;
-    }
-    @media (max-width: 768px) {
-      .trust-divider-v { display: none; }
-      .trust-founder-card { min-width: 100%; }
-    }
+    .trust-founder-photo span { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--gold); letter-spacing: 0.03em; }
+    .trust-founder-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .trust-founder-info { display: flex; flex-direction: column; gap: 2px; }
+    .trust-founder-info strong { font-size: 15px; font-weight: 600; color: var(--text); line-height: 1.3; }
+    .trust-founder-info span { font-size: 12px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
+    .trust-founder-info p { font-size: 13px; color: var(--muted); line-height: 1.55; margin: 0; }
 
-    /* ── SECTION WRAPPER ─────────────────────────────── */
-    .section-wrap {
-      max-width: 1300px;
-      margin: 0 auto;
-      padding: 0 5%;
-    }
-    section { padding: 100px 0; }
+    /* SERVICES */
+    #services-teaser { background: var(--cream); }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .view-all-wrap { margin-top: 36px; }
+    .view-all { font-size: 14px; font-weight: 600; color: var(--green); text-decoration: none; display: inline-flex; align-items: center; gap: 7px; transition: gap 0.2s, color 0.2s; }
+    .view-all:hover { gap: 12px; color: var(--gold); }
 
-    /* ── SERVICES ─────────────────────────────────────── */
-    #services { background: var(--cream); }
-    .section-header {
-      max-width: 600px;
-      margin-bottom: 60px;
-    }
-    .section-header h2 { margin-top: 12px; }
-    .section-header p { margin-top: 16px; font-size: 17px; }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-    .service-card {
-      background: var(--sand);
-      border-radius: var(--radius);
-      padding: 36px 32px;
-      border-left: 3px solid var(--gold);
-      transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s;
-      position: relative;
-      overflow: hidden;
-    }
-    .service-card::after {
-      content: '';
-      position: absolute;
-      left: 0; top: 0; bottom: 0;
-      width: 3px;
-      background: var(--gold-dark);
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-    .service-card:hover {
-      box-shadow: 0 8px 32px rgba(0,0,0,0.10);
-      transform: translateY(-4px);
-    }
-    .service-card:hover::after { opacity: 1; }
-    .service-icon {
-      width: 48px;
-      height: 48px;
-      background: var(--green);
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 20px;
-    }
-    .service-icon svg { width: 24px; height: 24px; stroke: var(--gold); fill: none; stroke-width: 1.6; }
-    .service-card h3 { margin-bottom: 10px; font-size: 19px; color: var(--text); }
-    .service-card p { font-size: 15px; line-height: 1.65; }
-    .service-num {
-      position: absolute;
-      top: 24px;
-      right: 28px;
-      font-family: 'Playfair Display', serif;
-      font-size: 13px;
-      color: var(--gold);
-      opacity: 0.5;
-    }
-
-    /* ── ABOUT TEASER ─────────────────────────────────── */
-    #about { background: var(--sand); }
-    .about-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
-    }
-    .about-img-wrap {
-      position: relative;
-    }
-    .about-img-box {
-      background: var(--green);
-      border-radius: 12px;
-      aspect-ratio: 4/5;
-      overflow: hidden;
-      position: relative;
-    }
-    .about-img-initials {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .initials-big {
-      font-family: 'Playfair Display', serif;
-      font-size: 120px;
-      color: rgba(201,150,59,0.15);
-      font-weight: 700;
-      line-height: 1;
-    }
-    .about-img-caption {
-      position: absolute;
-      bottom: 28px;
-      left: 28px;
-      right: 28px;
-    }
-    .about-img-caption h4 {
-      font-family: 'Playfair Display', serif;
-      font-size: 22px;
-      color: var(--cream);
-      font-weight: 600;
-    }
-    .about-img-caption p {
-      font-size: 13px;
-      color: rgba(248,245,239,0.6);
-      margin-top: 4px;
-    }
+    /* ABOUT TEASER */
+    #about-teaser { background: var(--sand); }
+    .about-inner { display: grid; grid-template-columns: 1fr 1.1fr; gap: 80px; align-items: center; }
+    .about-img-wrap { position: relative; }
+    .about-img-box { background: var(--green); border-radius: 12px; aspect-ratio: 4/5; overflow: hidden; position: relative; }
+    .about-img-initials { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+    .initials-big { font-family: 'Playfair Display', serif; font-size: 120px; color: rgba(201,150,59,0.15); font-weight: 700; line-height: 1; }
+    .about-img-caption { position: absolute; bottom: 28px; left: 28px; right: 28px; }
+    .about-img-caption h4 { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--cream); font-weight: 600; }
+    .about-img-caption p { font-size: 13px; color: rgba(248,245,239,0.6); margin-top: 4px; }
     .about-gold-badge {
-      position: absolute;
-      bottom: -20px;
-      right: -20px;
-      width: 100px;
-      height: 100px;
-      background: var(--gold);
-      border-radius: 50%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      gap: 2px;
-      box-shadow: 0 4px 24px rgba(201,150,59,0.35);
+      position: absolute; bottom: -20px; right: -20px;
+      width: 100px; height: 100px; background: var(--gold); border-radius: 50%;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center; gap: 2px; box-shadow: 0 4px 24px rgba(201,150,59,0.35);
     }
-    .about-gold-badge strong {
-      font-family: 'Playfair Display', serif;
-      font-size: 26px;
-      color: var(--white);
-      font-weight: 700;
-      line-height: 1;
-    }
-    .about-gold-badge span {
-      font-size: 10px;
-      color: rgba(255,255,255,0.85);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      line-height: 1.2;
-    }
-
+    .about-gold-badge strong { font-family: 'Playfair Display', serif; font-size: 26px; color: #fff; font-weight: 700; line-height: 1; }
+    .about-gold-badge span { font-size: 10px; color: rgba(255,255,255,0.85); text-transform: uppercase; letter-spacing: 0.06em; line-height: 1.2; }
     .about-content .label { margin-bottom: 12px; display: block; }
     .about-content h2 { margin-bottom: 24px; }
     .about-content p { margin-bottom: 18px; }
-    .about-blockquote {
-      border-left: 3px solid var(--gold);
-      padding-left: 24px;
-      margin: 28px 0;
-    }
-    .about-blockquote p {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 22px;
-      font-style: italic;
-      color: var(--text);
-      line-height: 1.5;
-    }
-    .signature {
-      font-family: 'Dancing Script', cursive;
-      font-size: 26px;
-      color: var(--green);
-      margin-top: 6px;
-    }
+    .about-blockquote { border-left: 3px solid var(--gold); padding-left: 24px; margin: 28px 0; }
+    .about-blockquote p { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-style: italic; color: var(--text); line-height: 1.5; }
+    .signature { font-family: 'Dancing Script', cursive; font-size: 26px; color: var(--green); margin-top: 6px; }
 
-    /* ── STATS ────────────────────────────────────────── */
-    #stats {
-      background: var(--green);
-      padding: 80px 0;
-    }
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 40px;
-      text-align: center;
-    }
-    .stat-item {}
-    .stat-num {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(42px, 5vw, 62px);
-      color: var(--gold);
-      font-weight: 700;
-      line-height: 1;
-    }
-    .stat-label {
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(248,245,239,0.55);
-      margin-top: 10px;
-      line-height: 1.4;
-    }
-    .stat-divider {
-      width: 1px;
-      background: rgba(201,150,59,0.2);
-    }
+    /* STATS */
+    #stats { background: var(--green); padding: 80px 0; }
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; text-align: center; }
+    .stat-num { font-family: 'Playfair Display', serif; font-size: clamp(42px, 5vw, 62px); color: var(--gold); font-weight: 700; line-height: 1; }
+    .stat-label { font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(248,245,239,0.55); margin-top: 10px; line-height: 1.4; }
+    .stat-divider { width: 1px; background: rgba(201,150,59,0.2); }
 
-    /* ── TESTIMONIALS ─────────────────────────────────── */
-    #testimonials {
-      background: var(--green);
-      padding: 80px 0 100px;
-      border-top: 1px solid rgba(201,150,59,0.15);
-    }
-    .testimonials-header {
-      max-width: 500px;
-      margin-bottom: 48px;
-    }
+    /* TESTIMONIALS */
+    #testimonials { background: var(--green); padding: 80px 0 100px; border-top: 1px solid rgba(201,150,59,0.15); }
+    .testimonials-header { max-width: 500px; margin-bottom: 48px; }
     .testimonials-header h2 { color: var(--cream); }
     .testimonials-header p { color: rgba(248,245,239,0.6); }
-
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-    }
-    .testimonial-card {
-      background: rgba(248,245,239,0.06);
-      border: 1px solid rgba(201,150,59,0.15);
-      border-radius: var(--radius);
-      padding: 36px;
-    }
+    .testimonials-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .testimonial-card { background: rgba(248,245,239,0.06); border: 1px solid rgba(201,150,59,0.15); border-radius: var(--radius); padding: 36px; }
     .stars { margin-bottom: 18px; display: flex; gap: 4px; }
     .star { color: var(--gold); font-size: 16px; }
-    .testimonial-quote {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 20px;
-      font-style: italic;
-      color: var(--cream);
-      line-height: 1.6;
-      margin-bottom: 24px;
-    }
-    .testimonial-author {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-    .author-avatar {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: var(--gold);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 600;
-      font-size: 15px;
-      color: var(--white);
-      flex-shrink: 0;
-    }
-    .author-name {
-      font-weight: 600;
-      font-size: 15px;
-      color: var(--cream);
-      line-height: 1.2;
-    }
-    .author-title {
-      font-size: 13px;
-      color: rgba(248,245,239,0.5);
-      margin-top: 2px;
-    }
+    .testimonial-quote { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-style: italic; color: var(--cream); line-height: 1.6; margin-bottom: 24px; }
+    .testimonial-author { display: flex; align-items: center; gap: 14px; }
+    .author-avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--gold); display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 15px; color: #fff; flex-shrink: 0; }
+    .author-name { font-weight: 600; font-size: 15px; color: var(--cream); line-height: 1.2; }
+    .author-title { font-size: 13px; color: rgba(248,245,239,0.5); margin-top: 2px; }
 
-    /* ── RESULTS ──────────────────────────────────────── */
-    #results { background: var(--cream); }
-    .results-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
-      margin-top: 60px;
-    }
-    .result-card {
-      background: var(--sand);
-      border-radius: var(--radius);
-      padding: 40px 36px;
-      position: relative;
-      overflow: hidden;
-      transition: box-shadow 0.3s, transform 0.3s;
-    }
-    .result-card:hover {
-      box-shadow: 0 12px 40px rgba(0,0,0,0.09);
-      transform: translateY(-4px);
-    }
-    .result-tag {
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 20px;
-      display: block;
-    }
+    /* RESULTS */
+    #results-teaser { background: var(--cream); }
+    .results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 60px; }
+    .result-card { background: var(--sand); border-radius: var(--radius); padding: 40px 36px; position: relative; overflow: hidden; transition: box-shadow 0.3s, transform 0.3s; }
+    .result-card:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.09); transform: translateY(-4px); }
+    .result-tag { font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; display: block; }
     .result-card h3 { margin-bottom: 14px; font-size: 20px; }
     .result-card p { font-size: 15px; margin-bottom: 24px; }
-    .result-outcome {
-      border-top: 1px solid rgba(0,0,0,0.07);
-      padding-top: 20px;
-      display: flex;
-      align-items: baseline;
-      gap: 8px;
-    }
-    .result-big {
-      font-family: 'Playfair Display', serif;
-      font-size: 38px;
-      color: var(--gold);
-      font-weight: 700;
-      line-height: 1;
-    }
-    .result-desc {
-      font-size: 13px;
-      color: var(--muted);
-      line-height: 1.4;
-    }
+    .result-outcome { border-top: 1px solid rgba(0,0,0,0.07); padding-top: 20px; display: flex; align-items: baseline; gap: 8px; }
+    .result-big { font-family: 'Playfair Display', serif; font-size: 38px; color: var(--gold); font-weight: 700; line-height: 1; }
+    .result-desc { font-size: 13px; color: var(--muted); line-height: 1.4; }
 
-    /* ── INSIGHTS ─────────────────────────────────────── */
-    #insights { background: var(--sand); }
-    .insights-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
-      margin-top: 60px;
-    }
-    .insight-card {
-      background: var(--cream);
-      border-radius: var(--radius);
-      padding: 36px;
-      transition: box-shadow 0.3s, transform 0.3s;
-    }
-    .insight-card:hover {
-      box-shadow: 0 8px 32px rgba(0,0,0,0.08);
-      transform: translateY(-3px);
-    }
-    .insight-meta {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 18px;
-    }
-    .insight-cat {
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--gold);
-      background: rgba(201,150,59,0.1);
-      padding: 3px 10px;
-      border-radius: 20px;
-    }
+    /* INSIGHTS */
+    #insights-teaser { background: var(--sand); }
+    .insights-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 60px; }
+    .insight-card { background: var(--cream); border-radius: var(--radius); padding: 36px; transition: box-shadow 0.3s, transform 0.3s; }
+    .insight-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.08); transform: translateY(-3px); }
+    .insight-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+    .insight-cat { font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); background: rgba(201,150,59,0.1); padding: 3px 10px; border-radius: 20px; }
     .insight-date { font-size: 13px; color: var(--muted); }
     .insight-card h3 { font-size: 19px; margin-bottom: 12px; color: var(--text); }
     .insight-card p { font-size: 15px; margin-bottom: 20px; }
-    .insight-read {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--green);
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: gap 0.2s;
-    }
-    .insight-read:hover { gap: 10px; }
+    .insight-read { font-size: 14px; font-weight: 600; color: var(--green); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: gap 0.2s; }
+    .insight-read:hover { gap: 10px; color: var(--gold); }
 
-    /* ── CTA BANNER ───────────────────────────────────── */
-    #cta-banner {
-      background: var(--gold);
-      padding: 80px 0;
-    }
-    .cta-inner {
-      max-width: 1300px;
-      margin: 0 auto;
-      padding: 0 5%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 48px;
-      flex-wrap: wrap;
-    }
-    .cta-text h2 {
-      font-size: clamp(28px, 3.5vw, 46px);
-      color: var(--white);
-      max-width: 600px;
-    }
-    .cta-text p {
-      color: rgba(255,255,255,0.8);
-      margin-top: 10px;
-      font-size: 17px;
-    }
-    .btn-white {
-      background: var(--white);
-      color: var(--gold);
-      padding: 16px 36px;
-      border-radius: 4px;
-      font-weight: 700;
-      font-size: 15px;
-      text-decoration: none;
-      white-space: nowrap;
-      transition: transform 0.2s, box-shadow 0.2s;
-      display: inline-block;
-    }
-    .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
-
-    /* ── CONTACT ──────────────────────────────────────── */
-    #contact { background: var(--cream); }
-    .contact-inner {
-      display: grid;
-      grid-template-columns: 1fr 1.4fr;
-      gap: 80px;
-      align-items: start;
-    }
-    .contact-info h2 { margin-bottom: 20px; }
-    .contact-info > p { margin-bottom: 36px; }
-    .contact-detail {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      margin-bottom: 24px;
-    }
-    .contact-icon {
-      width: 42px;
-      height: 42px;
-      background: var(--sand);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-    .contact-icon svg { width: 18px; height: 18px; stroke: var(--gold); fill: none; stroke-width: 1.8; }
-    .contact-detail-text strong {
-      display: block;
-      font-size: 14px;
-      color: var(--text);
-      margin-bottom: 2px;
-    }
-    .contact-detail-text span { font-size: 14px; color: var(--muted); }
-
-    .contact-form {
-      background: var(--sand);
-      border-radius: 12px;
-      padding: 48px;
-    }
-    .contact-form h3 { margin-bottom: 28px; font-size: 22px; }
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-    }
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 7px;
-      margin-bottom: 18px;
-    }
-    .form-group label {
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--text);
-      letter-spacing: 0.04em;
-    }
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      padding: 12px 16px;
-      border: 1.5px solid rgba(0,0,0,0.1);
-      border-radius: 6px;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 15px;
-      color: var(--text);
-      background: var(--cream);
-      transition: border-color 0.2s;
-      outline: none;
-      resize: vertical;
-    }
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus { border-color: var(--gold); }
-    .form-group textarea { min-height: 110px; }
-    .form-submit {
-      width: 100%;
-      padding: 15px;
-      background: var(--green);
-      color: var(--cream);
-      border: none;
-      border-radius: 6px;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 15px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.2s, transform 0.2s;
-      margin-top: 8px;
-    }
-    .form-submit:hover { background: var(--gold); transform: translateY(-1px); }
-
-    /* ── FOOTER ───────────────────────────────────────── */
-    footer {
-      background: var(--text);
-      padding: 70px 0 0;
-    }
-    .footer-grid {
-      max-width: 1300px;
-      margin: 0 auto;
-      padding: 0 5%;
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: 60px;
-    }
-    .footer-brand {}
-    .footer-logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 22px;
-      font-weight: 700;
-      color: var(--cream);
-      margin-bottom: 4px;
-    }
-    .footer-tagline {
-      font-size: 12px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(248,245,239,0.35);
-      margin-bottom: 20px;
-    }
-    .footer-brand p {
-      font-size: 14px;
-      color: rgba(248,245,239,0.5);
-      line-height: 1.7;
-      max-width: 260px;
-    }
-    .footer-socials {
-      display: flex;
-      gap: 12px;
-      margin-top: 24px;
-    }
-    .footer-social-link {
-      width: 36px;
-      height: 36px;
-      background: rgba(248,245,239,0.07);
-      border-radius: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      transition: background 0.2s;
-    }
-    .footer-social-link:hover { background: var(--gold); }
-    .footer-social-link svg { width: 16px; height: 16px; stroke: var(--cream); fill: none; stroke-width: 1.8; }
-
-    .footer-col h4 {
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 20px;
-    }
-    .footer-links {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 11px;
-    }
-    .footer-links a {
-      font-size: 14px;
-      color: rgba(248,245,239,0.55);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .footer-links a:hover { color: var(--cream); }
-
-    .footer-bottom {
-      max-width: 1300px;
-      margin: 60px auto 0;
-      padding: 20px 5%;
-      border-top: 1px solid rgba(248,245,239,0.07);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-    .footer-bottom p {
-      font-size: 13px;
-      color: rgba(248,245,239,0.3);
-    }
-    .footer-bottom a { color: rgba(248,245,239,0.4); text-decoration: none; }
-    .footer-bottom a:hover { color: var(--cream); }
-
-    /* ── SCROLL REVEAL ───────────────────────────────── */
-    .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.2s; }
-    .reveal-delay-3 { transition-delay: 0.3s; }
-    .reveal-delay-4 { transition-delay: 0.4s; }
-    .reveal-delay-5 { transition-delay: 0.5s; }
-
-    /* ── KEYFRAMES ───────────────────────────────────── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to   { opacity: 1; }
-    }
-    @keyframes countUp { from { opacity: 0; } to { opacity: 1; } }
-
-    /* ── RESPONSIVE ─────────────────────────────────── */
+    /* RESPONSIVE */
     @media (max-width: 1024px) {
       .services-grid { grid-template-columns: 1fr 1fr; }
       .stats-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
       .stat-divider { display: none; }
       .results-grid { grid-template-columns: 1fr 1fr; }
-      .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
     }
     @media (max-width: 768px) {
-      section { padding: 70px 0; }
-      .nav-links, .nav-cta { display: none; }
-      .hamburger { display: flex; }
+      .hero-btns { flex-direction: column; }
       .about-inner { grid-template-columns: 1fr; gap: 48px; }
       .about-img-box { aspect-ratio: 3/2; }
       .testimonials-grid { grid-template-columns: 1fr; }
-      .contact-inner { grid-template-columns: 1fr; gap: 48px; }
-      .contact-form { padding: 32px 24px; }
-      .form-row { grid-template-columns: 1fr; }
-      .cta-inner { flex-direction: column; text-align: center; }
+      .trust-divider-v { display: none; }
+      .trust-founder-card { min-width: 100%; }
       .insights-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 640px) {
       .services-grid { grid-template-columns: 1fr; }
       .results-grid { grid-template-columns: 1fr; }
       .stats-grid { grid-template-columns: 1fr 1fr; }
-      .footer-grid { grid-template-columns: 1fr; gap: 36px; }
-      .hero-btns { flex-direction: column; }
-      .btn-primary, .btn-ghost { width: 100%; text-align: center; justify-content: center; }
+      .btn-primary, .btn-ghost-hero { width: 100%; text-align: center; justify-content: center; }
     }
   </style>
 </head>
 <body>
 
-  <!-- ── NAVBAR ─────────────────────────────────────── -->
-  <nav id="navbar" role="navigation" aria-label="Main navigation">
-    <a href="#" class="nav-logo" aria-label="Cashcare Financials home">
-      <span class="nav-logo-top">Cashcare</span>
-      <span class="nav-logo-sub">Financials Consultancy</span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="#about" class="active">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#results">Results</a></li>
-      <li><a href="#insights">Insights</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <a href="#contact" class="nav-cta">Book a Consultation</a>
-    <button class="hamburger" id="hamburger-btn" aria-label="Open menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
+<!-- NAVBAR -->
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo" aria-label="Cashcare Financials home">
+    <span class="nav-logo-top">Cashcare</span>
+    <span class="nav-logo-sub">Financials Consultancy</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="results.html">Results</a></li>
+    <li><a href="insights.html">Insights</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Book a Consultation</a>
+  <button class="hamburger" id="hamburger-btn" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div id="drawer-overlay" aria-hidden="true"></div>
+<nav id="mobile-drawer" role="dialog" aria-label="Mobile navigation" aria-modal="true">
+  <button id="drawer-close" aria-label="Close menu">&#x2715;</button>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="results.html">Results</a>
+  <a href="insights.html">Insights</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" style="color:var(--gold);margin-top:16px;font-size:20px;">Book a Consultation &#8594;</a>
+</nav>
 
-  <!-- Mobile Drawer -->
-  <div id="drawer-overlay" aria-hidden="true"></div>
-  <nav id="mobile-drawer" role="dialog" aria-label="Mobile navigation" aria-modal="true">
-    <button id="drawer-close" aria-label="Close menu">✕</button>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#results">Results</a>
-    <a href="#insights">Insights</a>
-    <a href="#contact">Contact</a>
-    <a href="#contact" style="color: var(--gold); margin-top: 16px; font-size: 20px;">Book a Consultation →</a>
-  </nav>
+<!-- HERO -->
+<section id="hero" aria-label="Hero">
+  <div class="hero-geo" aria-hidden="true"></div>
+  <div class="hero-gold-bar" aria-hidden="true"></div>
+  <div class="hero-line" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div class="hero-label" aria-hidden="true">
+      <span>Cashcare Financials Consultancy</span>
+    </div>
+    <h1 class="hero-h1">
+      Your Finances,<br/>
+      Handled with<br/>
+      <em>Precision</em> &amp; Purpose.
+    </h1>
+    <p class="hero-sub">
+      Expert tax consultancy, auditing, and financial advisory, built for Kenyan businesses and individuals who want more than generic advice.
+    </p>
+    <div class="hero-btns">
+      <a href="contact.html" class="btn-primary">Book a Free Call <span class="arrow">&#8594;</span></a>
+      <a href="services.html" class="btn-ghost-hero">Explore Our Services</a>
+    </div>
+    <div class="hero-scroll" aria-hidden="true">
+      <div class="hero-scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </div>
+</section>
 
-  <!-- ── HERO ───────────────────────────────────────── -->
-  <section id="hero" aria-label="Hero">
-    <div class="hero-geo" aria-hidden="true"></div>
-    <div class="hero-gold-bar" aria-hidden="true"></div>
-    <div class="hero-line" aria-hidden="true"></div>
-    <div class="hero-inner section-wrap">
-      <div class="hero-label" aria-hidden="true">
-        <span>Cashcare Financials Consultancy</span>
+<!-- TRUST BAR - EXPANDED WITH FOUNDER CARDS -->
+<div id="trust-bar" aria-label="Why Cashcare">
+  <div class="trust-inner-expanded">
+    <div class="trust-credentials">
+      <span class="trust-label">Trusted for</span>
+      <div class="trust-items">
+        <div class="trust-item">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          KRA Registered Consultants
+        </div>
+        <div class="trust-item">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          ICPAK-Aligned Practices
+        </div>
+        <div class="trust-item">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          Kenya Data Protection Compliant
+        </div>
+        <div class="trust-item">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          Serving Clients Since 2014
+        </div>
       </div>
-      <h1 class="hero-h1">
-        Your Finances,<br/>
-        Handled with<br/>
-        <em>Precision</em> &amp; Purpose.
-      </h1>
-      <p class="hero-sub">
-        Expert tax consultancy, auditing, and financial advisory, built for Kenyan businesses and individuals who want more than generic advice.
-      </p>
-      <div class="hero-btns">
-        <a href="#contact" class="btn-primary">
-          Book a Free Call <span class="arrow">→</span>
+    </div>
+    <div class="trust-divider-v" aria-hidden="true"></div>
+    <div class="trust-founders">
+      <span class="trust-label">The Team Behind Your Finances</span>
+      <div class="trust-founder-cards">
+        <div class="trust-founder-card">
+          <div class="trust-founder-photo" aria-label="Photo of Ochieng Ng'ara">
+            <!-- Replace with: <img src="ochieng.jpg" alt="Ochieng Ng'ara"> -->
+            <span>ON</span>
+          </div>
+          <div class="trust-founder-info">
+            <strong>Ochieng&#8217; Ng&#8217;ara</strong>
+            <span>Founder &amp; Lead Consultant</span>
+            <p>CPA-K certified with over a decade navigating KRA compliance and financial strategy for Kenyan businesses.</p>
+          </div>
+        </div>
+        <div class="trust-founder-card">
+          <div class="trust-founder-photo" aria-label="Photo of Shadrack Kojack">
+            <!-- Replace with: <img src="shadrack.jpg" alt="Shadrack Kojack"> -->
+            <span>SK</span>
+          </div>
+          <div class="trust-founder-info">
+            <strong>Shadrack Kojack</strong>
+            <span>Co-Founder &amp; Audit Lead</span>
+            <p>Specialist in auditing and business model development with deep experience across SMEs and growing enterprises.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES TEASER -->
+<section id="services-teaser">
+  <div class="section-wrap">
+    <div class="section-header reveal">
+      <span class="label">What We Do</span>
+      <h2>Nine Services. One Trusted Partner.</h2>
+      <p>From KRA compliance to building full business models, we handle the financial complexity so you can focus on growing.</p>
+    </div>
+    <div class="services-grid">
+      <article class="service-card reveal reveal-delay-1">
+        <span class="service-num">01</span>
+        <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><rect x="3" y="3" width="18" height="18" rx="2"/></svg></div>
+        <h3>Tax Consultancy</h3>
+        <p>Strategic individual and corporate tax planning that keeps you compliant with KRA while minimising your legitimate tax burden.</p>
+      </article>
+      <article class="service-card reveal reveal-delay-2">
+        <span class="service-num">02</span>
+        <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+        <h3>Auditing</h3>
+        <p>Independent audits that give you, and your stakeholders, full confidence in your financial statements and internal controls.</p>
+      </article>
+      <article class="service-card reveal reveal-delay-3">
+        <span class="service-num">03</span>
+        <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+        <h3>Professional Bookkeeping</h3>
+        <p>Accurate, up-to-date books that reflect the true health of your business, monthly, quarterly, or on a catch-up basis.</p>
+      </article>
+    </div>
+    <div class="view-all-wrap reveal">
+      <a href="services.html" class="view-all">View All Nine Services &#8594;</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT TEASER -->
+<section id="about-teaser">
+  <div class="section-wrap">
+    <div class="about-inner">
+      <div class="about-img-wrap reveal">
+        <div class="about-img-box">
+          <div class="about-img-initials" aria-hidden="true">
+            <span class="initials-big">ON</span>
+          </div>
+          <div class="about-img-caption">
+            <h4>Ochieng&#8217; Ng&#8217;ara</h4>
+            <p>Founder, Cashcare Financials</p>
+          </div>
+        </div>
+        <div class="about-gold-badge" aria-label="10 years of experience">
+          <strong>10+</strong>
+          <span>Years<br/>Practice</span>
+        </div>
+      </div>
+      <div class="about-content reveal reveal-delay-2">
+        <span class="label">About Us</span>
+        <h2>We Started Because You Deserve Better Than Generic Advice.</h2>
+        <p>We built Cashcare Financials because we kept seeing the same thing: smart business owners and hardworking individuals making financial decisions without proper guidance. Not boilerplate compliance. Actual strategy.</p>
+        <p>Our team combines deep KRA knowledge with real-world business experience. We know the Kenyan tax landscape, the deadlines, the amendments, the amnesty windows, and we use that knowledge to protect you and help you grow.</p>
+        <div class="about-blockquote">
+          <p>&#8220;We don&#8217;t just file your returns. We make sure your numbers are telling the right story, to KRA, to investors, and to you.&#8221;</p>
+        </div>
+        <div class="signature">Ochieng&#8217; Ng&#8217;ara</div>
+        <p style="font-size:13px;color:var(--muted);margin-top:6px;">Founder, Cashcare Financials</p>
+        <div style="margin-top:28px;display:flex;gap:14px;flex-wrap:wrap;">
+          <a href="about.html" class="btn-primary">Meet the Team <span class="arrow">&#8594;</span></a>
+          <a href="services.html" style="background:transparent;color:var(--text);padding:15px 32px;border-radius:4px;border:1.5px solid rgba(28,28,26,0.2);font-weight:500;font-size:15px;text-decoration:none;transition:border-color 0.2s;">Our Services</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section id="stats" aria-label="Key statistics">
+  <div class="section-wrap">
+    <div class="stats-grid">
+      <div class="reveal reveal-delay-1">
+        <div class="stat-num" data-target="300" data-suffix="+">0</div>
+        <div class="stat-label">Clients Served</div>
+      </div>
+      <div class="stat-divider" aria-hidden="true"></div>
+      <div class="reveal reveal-delay-2">
+        <div class="stat-num" data-target="10" data-suffix="+">0</div>
+        <div class="stat-label">Years of Practice</div>
+      </div>
+      <div class="stat-divider" aria-hidden="true"></div>
+      <div class="reveal reveal-delay-3">
+        <div class="stat-num" data-target="1200" data-suffix="+">0</div>
+        <div class="stat-label">Returns Filed</div>
+      </div>
+      <div class="stat-divider" aria-hidden="true"></div>
+      <div class="reveal reveal-delay-4">
+        <div class="stat-num" data-target="9" data-suffix="">0</div>
+        <div class="stat-label">Core Services</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS - all 4 -->
+<section id="testimonials" aria-label="Client testimonials">
+  <div class="section-wrap">
+    <div class="testimonials-header reveal">
+      <span class="label" style="color:var(--gold);">Client Stories</span>
+      <h2 style="color:var(--cream);margin-top:12px;">What Our Clients Say</h2>
+      <p style="color:rgba(248,245,239,0.55);margin-top:12px;">Real results for real businesses and individuals across Kenya.</p>
+    </div>
+    <div class="testimonials-grid">
+      <article class="testimonial-card reveal reveal-delay-1">
+        <div class="stars" aria-label="5 stars"><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span></div>
+        <p class="testimonial-quote">&#8220;Cashcare sorted out three years of overdue KRA filings for my shop. They handled everything, I didn&#8217;t have to stress for a single day. My PIN is clean and I finally sleep at night.&#8221;</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" aria-hidden="true">JM</div>
+          <div><div class="author-name">James M.</div><div class="author-title">Retail Business Owner, Nairobi</div></div>
+        </div>
+      </article>
+      <article class="testimonial-card reveal reveal-delay-2">
+        <div class="stars" aria-label="5 stars"><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span></div>
+        <p class="testimonial-quote">&#8220;The business model they built helped us secure a bank loan we&#8217;d been trying to get for two years. Detailed, realistic, and it spoke the language the bank needed to hear.&#8221;</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" aria-hidden="true">AK</div>
+          <div><div class="author-name">Amina K.</div><div class="author-title">Director, Logistics SME, Mombasa</div></div>
+        </div>
+      </article>
+      <article class="testimonial-card reveal reveal-delay-3">
+        <div class="stars" aria-label="5 stars"><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span></div>
+        <p class="testimonial-quote">&#8220;Our monthly PAYE and VAT used to be a nightmare. Now it&#8217;s completely off our plate. Cashcare is proactive, they remind us, file on time, and explain everything in plain language.&#8221;</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" aria-hidden="true">PO</div>
+          <div><div class="author-name">Peter O.</div><div class="author-title">Managing Director, Tech Startup</div></div>
+        </div>
+      </article>
+      <article class="testimonial-card reveal reveal-delay-4">
+        <div class="stars" aria-label="5 stars"><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span></div>
+        <p class="testimonial-quote">&#8220;The cashflow projections gave us the confidence to expand into a second branch. For the first time, we actually understood our own numbers. That&#8217;s what good financial advice looks like.&#8221;</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" aria-hidden="true">GN</div>
+          <div><div class="author-name">Grace N.</div><div class="author-title">Founder, Food &amp; Beverage Group</div></div>
+        </div>
+      </article>
+    </div>
+    <div style="margin-top:36px;" class="reveal">
+      <a href="results.html" style="font-size:14px;font-weight:600;color:var(--gold);text-decoration:none;display:inline-flex;align-items:center;gap:7px;">Read All Case Studies &#8594;</a>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS TEASER -->
+<section id="results-teaser">
+  <div class="section-wrap">
+    <div class="section-header reveal">
+      <span class="label">Case Studies</span>
+      <h2>Real Outcomes for Real Clients.</h2>
+      <p>Specificity builds trust. Here are three examples of what working with Cashcare Financials actually looks like.</p>
+    </div>
+    <div class="results-grid">
+      <article class="result-card reveal reveal-delay-1">
+        <span class="result-tag">Amnesty Filing</span>
+        <h3>Logistics SME, KRA Compliance Restored</h3>
+        <p>A Nairobi-based logistics company with 4 years of unfiled returns faced potential business suspension. We managed a full amnesty filing, negotiated penalty waivers, and restored full compliance status.</p>
+        <div class="result-outcome">
+          <span class="result-big">4yrs</span>
+          <span class="result-desc">Backlog cleared in 6 weeks. Zero business disruption.</span>
+        </div>
+      </article>
+      <article class="result-card reveal reveal-delay-2">
+        <span class="result-tag">Business Model</span>
+        <h3>Restaurant Group, Bank Financing Secured</h3>
+        <p>A growing food business needed a bankable financial model to secure a KES 8M expansion loan. We built a 3-year model with scenario analysis, unit economics, and a clear narrative for the lender.</p>
+        <div class="result-outcome">
+          <span class="result-big">KES 8M</span>
+          <span class="result-desc">Loan approved within 30 days of submission.</span>
+        </div>
+      </article>
+      <article class="result-card reveal reveal-delay-3">
+        <span class="result-tag">Tax &amp; Bookkeeping</span>
+        <h3>Retail Chain, Tax Savings Identified</h3>
+        <p>During a bookkeeping engagement for a 3-branch retail client, our review identified KES 240K in overpaid tax across two years. We filed an amendment and secured a refund while restructuring their VAT process.</p>
+        <div class="result-outcome">
+          <span class="result-big">KES 240K</span>
+          <span class="result-desc">Recovered in overpaid tax through amendment filing.</span>
+        </div>
+      </article>
+    </div>
+    <div style="margin-top:36px;" class="reveal">
+      <a href="results.html" class="view-all">View All Case Studies &#8594;</a>
+    </div>
+  </div>
+</section>
+
+<!-- INSIGHTS TEASER -->
+<section id="insights-teaser" style="background:var(--sand);">
+  <div class="section-wrap">
+    <div class="section-header reveal">
+      <span class="label">Insights</span>
+      <h2>Financial Knowledge, Plainly Spoken.</h2>
+      <p>No jargon. No filler. Just practical guidance for Kenyan businesses and individuals navigating tax and finance.</p>
+    </div>
+    <div class="insights-grid">
+      <article class="insight-card reveal reveal-delay-1">
+        <div class="insight-meta"><span class="insight-cat">Tax</span><span class="insight-date">May 2025</span></div>
+        <h3>KRA Amnesty 2025: Who Qualifies and How to Apply</h3>
+        <p>The KRA tax amnesty window is open. Here&#8217;s exactly who qualifies, what penalties are waived, and the steps to take before the deadline.</p>
+        <a href="insights.html" class="insight-read">Read More &#8594;</a>
+      </article>
+      <article class="insight-card reveal reveal-delay-2">
+        <div class="insight-meta"><span class="insight-cat">VAT</span><span class="insight-date">Apr 2025</span></div>
+        <h3>The 5 Most Common VAT Errors Kenyan SMEs Make</h3>
+        <p>From wrong tax codes to missed input claims, these are the VAT mistakes that quietly cost businesses money, and how to fix them.</p>
+        <a href="insights.html" class="insight-read">Read More &#8594;</a>
+      </article>
+      <article class="insight-card reveal reveal-delay-3">
+        <div class="insight-meta"><span class="insight-cat">Business Finance</span><span class="insight-date">Mar 2025</span></div>
+        <h3>Building a Cashflow Projection Your Bank Will Actually Believe</h3>
+        <p>Most cashflow projections are overly optimistic and instantly dismissed. Here&#8217;s what lenders actually look for, and how to build a model that holds up.</p>
+        <a href="insights.html" class="insight-read">Read More &#8594;</a>
+      </article>
+    </div>
+    <div style="margin-top:36px;" class="reveal">
+      <a href="insights.html" class="view-all">View All Insights &#8594;</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<div id="cta-banner" role="complementary" aria-label="Call to action">
+  <div class="cta-inner">
+    <div class="cta-text">
+      <h2>Ready to Take Control of Your Financial Future?</h2>
+      <p>No pressure. No jargon. Just a real conversation about what you need.</p>
+    </div>
+    <a href="contact.html" class="btn-white">Book a Free Consultation</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer role="contentinfo">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">Cashcare Financials</div>
+      <div class="footer-tagline">Consultancy</div>
+      <p>Expert tax, audit, and financial advisory services for Kenyan businesses and individuals, delivered with precision and care.</p>
+      <div class="footer-socials">
+        <a href="#" class="footer-social-link" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
         </a>
-        <a href="#services" class="btn-ghost">Explore Our Services</a>
-      </div>
-      <div class="hero-scroll" aria-hidden="true">
-        <div class="hero-scroll-line"></div>
-        <span>Scroll</span>
+        <a href="#" class="footer-social-link" aria-label="Twitter / X">
+          <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+        </a>
       </div>
     </div>
-  </section>
-
-  <!-- ── WHY CASHCARE / INTRO STRIP ──────────────────── -->
-  <div id="trust-bar" aria-label="Why Cashcare">
-    <div class="trust-inner-expanded">
-      <div class="trust-credentials">
-        <span class="trust-label">Trusted for</span>
-        <div class="trust-items">
-          <div class="trust-item">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            KRA Registered Consultants
-          </div>
-          <div class="trust-item">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            ICPAK-Aligned Practices
-          </div>
-          <div class="trust-item">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            Kenya Data Protection Compliant
-          </div>
-          <div class="trust-item">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            Serving Clients Since 2014
-          </div>
-        </div>
-      </div>
-      <div class="trust-divider-v" aria-hidden="true"></div>
-      <div class="trust-founders">
-        <span class="trust-label">The Team Behind Your Finances</span>
-        <div class="trust-founder-cards">
-          <div class="trust-founder-card">
-            <div class="trust-founder-photo" aria-label="Photo of Ochieng Ngara">
-              <!-- Replace src with actual photo: <img src="ochieng.jpg" alt="Ochieng Ngara"> -->
-              <span>ON</span>
-            </div>
-            <div class="trust-founder-info">
-              <strong>Ochieng&#8217; Ng&#8217;ara</strong>
-              <span>Founder &amp; Lead Consultant</span>
-              <p>CPA-K certified with over a decade navigating KRA compliance and financial strategy for Kenyan businesses.</p>
-            </div>
-          </div>
-          <div class="trust-founder-card">
-            <div class="trust-founder-photo" aria-label="Photo of Shadrack Kojack">
-              <!-- Replace src with actual photo: <img src="shadrack.jpg" alt="Shadrack Kojack"> -->
-              <span>SK</span>
-            </div>
-            <div class="trust-founder-info">
-              <strong>Shadrack Kojack</strong>
-              <span>Co-Founder &amp; Audit Lead</span>
-              <p>Specialist in auditing and business model development with deep experience across SMEs and growing enterprises.</p>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul class="footer-links">
+        <li><a href="services.html">Tax Consultancy</a></li>
+        <li><a href="services.html">Auditing</a></li>
+        <li><a href="services.html">Bookkeeping</a></li>
+        <li><a href="services.html">KRA Returns</a></li>
+        <li><a href="services.html">VAT &amp; PAYE</a></li>
+        <li><a href="services.html">Amnesty Filing</a></li>
+        <li><a href="services.html">Business Models</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul class="footer-links">
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="results.html">Case Studies</a></li>
+        <li><a href="insights.html">Insights</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul class="footer-links">
+        <li><a href="mailto:info@cashcarefinancials.co.ke">info@cashcarefinancials.co.ke</a></li>
+        <li><a href="tel:+254700000000">+254 700 000 000</a></li>
+        <li><a>Nairobi, Kenya</a></li>
+        <li><a href="contact.html">Book a Consultation</a></li>
+      </ul>
     </div>
   </div>
-
-  <!-- ── SERVICES ──────────────────────────────────── -->
-  <section id="services">
-    <div class="section-wrap">
-      <div class="section-header reveal">
-        <span class="label">What We Do</span>
-        <h2>Nine Services. One Trusted Partner.</h2>
-        <p>From KRA compliance to building full business models, we handle the financial complexity so you can focus on growing.</p>
-      </div>
-      <div class="services-grid">
-
-        <article class="service-card reveal reveal-delay-1">
-          <span class="service-num">01</span>
-          <div class="service-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
-          </div>
-          <h3>Tax Consultancy</h3>
-          <p>Strategic individual and corporate tax planning that keeps you compliant with KRA while minimising your legitimate tax burden.</p>
-        </article>
-
-        <article class="service-card reveal reveal-delay-2">
-          <span class="service-num">02</span>
-          <div class="service-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M3 3h18v18H3z" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-          </div>
-          <h3>Auditing</h3>
-          <p>Independent audits that give you, and your stakeholders, full confidence in your financial statements and internal controls.</p>
-        </article>
-
-        <article class="service-card reveal reveal-delay-3">
-          <span class="service-num">03</span>
-          <div class="service-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-          </div>
-          <h3>Professional Bookkeeping</h3>
-          <p>Accurate, up-to-date books that reflect the true health of your business, monthly, quarterly, or on a catch-up basis.</p>
-        </article>
-
-        <article class="service-card reveal reveal-delay-1">
-          <span class="service-num">04</span>
-          <div class="service-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 3H8l-2 4h12l-2-4z"/></svg>
-          </div>
-          <h3>KRA Income Tax Reports</h3>
-          <p>Timely and accurate income tax return preparation and submission, avoiding penalties and keeping your PIN in good standing.</p>
-        </article>
-
-        <article class="service-card reveal reveal-delay-2">
-          <span class="service-num">05</span>
-          <div class="service-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-          </div>
-          <h3>VAT &amp; Monthly PAYE</h3>
-          <p>End-to-end VAT registration, filing, and PAYE payroll management, every return filed correctly and on time, every month.</p>
-        </article>
-
-        <article class="service-card reveal reveal-delay-3">
-          <span class="service-num">06</span>
-          <div class="service-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </div>
-          <h3>Amnesty Filing</h3>
-          <p>Behind on KRA filings? We manage the amnesty process from start to finish, resolving arrears and restoring your compliance status.</p>
-        </article>
-
-        <article class="service-card reveal reveal-delay-1">
-          <span class="service-num">07</span>
-          <div class="service-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-          </div>
-          <h3>Budgeting &amp; Cashflow</h3>
-          <p>Forward-looking budgets and cashflow projections that help you make smarter decisions, whether you're planning growth or managing a tight quarter.</p>
-        </article>
-
-        <article class="service-card reveal reveal-delay-2">
-          <span class="service-num">08</span>
-          <div class="service-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
-          </div>
-          <h3>Income Tax Amendments</h3>
-          <p>Filed a return with errors? We handle tax amendments accurately and efficiently to correct the record and protect you from penalties.</p>
-        </article>
-
-        <article class="service-card reveal reveal-delay-3">
-          <span class="service-num">09</span>
-          <div class="service-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-          </div>
-          <h3>Business Model Building</h3>
-          <p>From startup feasibility to investor-ready financial models, we build the numbers that tell the real story of your business's potential.</p>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ── ABOUT ───────────────────────────────────────── -->
-  <section id="about">
-    <div class="section-wrap">
-      <div class="about-inner">
-        <div class="about-img-wrap reveal">
-          <div class="about-img-box">
-            <div class="about-img-initials" aria-hidden="true">
-              <span class="initials-big">ON</span>
-            </div>
-            <div class="about-img-caption">
-              <h4>Ochieng&#8217; Ng&#8217;ara</h4>
-              <p>Founder, Cashcare Financials</p>
-            </div>
-          </div>
-          <div class="about-gold-badge" aria-label="10 years of experience">
-            <strong>10+</strong>
-            <span>Years<br/>Practice</span>
-          </div>
-        </div>
-        <div class="about-content reveal reveal-delay-2">
-          <span class="label">About Us</span>
-          <h2>We Started Because You Deserve Better Than Generic Advice.</h2>
-          <p>We built Cashcare Financials because we kept seeing the same thing: smart business owners and hardworking individuals making financial decisions without proper guidance. Not boilerplate compliance. Actual strategy.</p>
-          <p>Our team combines deep KRA knowledge with real-world business experience. We know the Kenyan tax landscape, the deadlines, the amendments, the amnesty windows, and we use that knowledge to protect you and help you grow.</p>
-          <div class="about-blockquote">
-            <p>"We don't just file your returns. We make sure your numbers are telling the right story, to KRA, to investors, and to you."</p>
-          </div>
-          <div class="signature">Ochieng&#8217; Ng&#8217;ara</div>
-          <p style="font-size:13px; color: var(--muted); margin-top: 6px;">Founder, Cashcare Financials</p>
-          <a href="#contact" class="btn-primary" style="margin-top: 28px; display:inline-flex;">
-            Work With Us <span class="arrow">→</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── STATS ──────────────────────────────────────── -->
-  <section id="stats" aria-label="Key statistics">
-    <div class="section-wrap">
-      <div class="stats-grid">
-        <div class="stat-item reveal reveal-delay-1">
-          <div class="stat-num" data-target="300" data-suffix="+">0</div>
-          <div class="stat-label">Clients Served</div>
-        </div>
-        <div class="stat-divider" aria-hidden="true"></div>
-        <div class="stat-item reveal reveal-delay-2">
-          <div class="stat-num" data-target="10" data-suffix="+">0</div>
-          <div class="stat-label">Years of Practice</div>
-        </div>
-        <div class="stat-divider" aria-hidden="true"></div>
-        <div class="stat-item reveal reveal-delay-3">
-          <div class="stat-num" data-target="1200" data-suffix="+">0</div>
-          <div class="stat-label">Returns Filed</div>
-        </div>
-        <div class="stat-divider" aria-hidden="true"></div>
-        <div class="stat-item reveal reveal-delay-4">
-          <div class="stat-num" data-target="9" data-suffix="">0</div>
-          <div class="stat-label">Core Services</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── TESTIMONIALS ───────────────────────────────── -->
-  <section id="testimonials" aria-label="Client testimonials">
-    <div class="section-wrap">
-      <div class="testimonials-header reveal">
-        <span class="label" style="color: var(--gold);">Client Stories</span>
-        <h2 style="color:var(--cream); margin-top:12px;">What Our Clients Say</h2>
-        <p style="color:rgba(248,245,239,0.55); margin-top:12px;">Real results for real businesses and individuals across Kenya.</p>
-      </div>
-      <div class="testimonials-grid">
-
-        <article class="testimonial-card reveal reveal-delay-1">
-          <div class="stars" aria-label="5 stars">
-            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
-          </div>
-          <p class="testimonial-quote">"Cashcare sorted out three years of overdue KRA filings for my shop. They handled everything, I didn't have to stress for a single day. My PIN is clean and I finally sleep at night."</p>
-          <div class="testimonial-author">
-            <div class="author-avatar" aria-hidden="true">JM</div>
-            <div>
-              <div class="author-name">James M.</div>
-              <div class="author-title">Retail Business Owner, Nairobi</div>
-            </div>
-          </div>
-        </article>
-
-        <article class="testimonial-card reveal reveal-delay-2">
-          <div class="stars" aria-label="5 stars">
-            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
-          </div>
-          <p class="testimonial-quote">"The business model they built helped us secure a bank loan we'd been trying to get for two years. Detailed, realistic, and it spoke the language the bank needed to hear."</p>
-          <div class="testimonial-author">
-            <div class="author-avatar" aria-hidden="true">AK</div>
-            <div>
-              <div class="author-name">Amina K.</div>
-              <div class="author-title">Director, Logistics SME, Mombasa</div>
-            </div>
-          </div>
-        </article>
-
-        <article class="testimonial-card reveal reveal-delay-3">
-          <div class="stars" aria-label="5 stars">
-            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
-          </div>
-          <p class="testimonial-quote">"Our monthly PAYE and VAT used to be a nightmare. Now it's completely off our plate. Cashcare is proactive, they remind us, file on time, and explain everything in plain language."</p>
-          <div class="testimonial-author">
-            <div class="author-avatar" aria-hidden="true">PO</div>
-            <div>
-              <div class="author-name">Peter O.</div>
-              <div class="author-title">Managing Director, Tech Startup</div>
-            </div>
-          </div>
-        </article>
-
-        <article class="testimonial-card reveal reveal-delay-4">
-          <div class="stars" aria-label="5 stars">
-            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
-          </div>
-          <p class="testimonial-quote">"The cashflow projections gave us the confidence to expand into a second branch. For the first time, we actually understood our own numbers. That's what good financial advice looks like."</p>
-          <div class="testimonial-author">
-            <div class="author-avatar" aria-hidden="true">GN</div>
-            <div>
-              <div class="author-name">Grace N.</div>
-              <div class="author-title">Founder, Food &amp; Beverage Group</div>
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ── RESULTS ────────────────────────────────────── -->
-  <section id="results">
-    <div class="section-wrap">
-      <div class="section-header reveal">
-        <span class="label">Case Studies</span>
-        <h2>Real Outcomes for Real Clients.</h2>
-        <p>Specificity builds trust. Here are three examples of what working with Cashcare Financials actually looks like.</p>
-      </div>
-      <div class="results-grid">
-
-        <article class="result-card reveal reveal-delay-1">
-          <span class="result-tag">Amnesty Filing</span>
-          <h3>Logistics SME, KRA Compliance Restored</h3>
-          <p>A Nairobi-based logistics company with 4 years of unfiled returns faced potential business suspension. We managed a full amnesty filing across all return types, negotiated penalty waivers, and restored full compliance status.</p>
-          <div class="result-outcome">
-            <span class="result-big">4yrs</span>
-            <span class="result-desc">Backlog cleared in 6 weeks. Zero business disruption.</span>
-          </div>
-        </article>
-
-        <article class="result-card reveal reveal-delay-2">
-          <span class="result-tag">Business Model</span>
-          <h3>Restaurant Group, Bank Financing Secured</h3>
-          <p>A growing food business needed a bankable financial model to secure a KES 8M expansion loan. We built a 3-year model with scenario analysis, unit economics, and a clear narrative for the lender.</p>
-          <div class="result-outcome">
-            <span class="result-big">KES 8M</span>
-            <span class="result-desc">Loan approved within 30 days of submission.</span>
-          </div>
-        </article>
-
-        <article class="result-card reveal reveal-delay-3">
-          <span class="result-tag">Tax &amp; Bookkeeping</span>
-          <h3>Retail Chain, Tax Savings Identified</h3>
-          <p>During a bookkeeping engagement for a 3-branch retail client, our review identified KES 240K in overpaid tax across two years. We filed an amendment and secured a refund while restructuring their VAT process.</p>
-          <div class="result-outcome">
-            <span class="result-big">KES 240K</span>
-            <span class="result-desc">Recovered in overpaid tax through amendment filing.</span>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ── INSIGHTS ───────────────────────────────────── -->
-  <section id="insights">
-    <div class="section-wrap">
-      <div class="section-header reveal">
-        <span class="label">Insights</span>
-        <h2>Financial Knowledge, Plainly Spoken.</h2>
-        <p>No jargon. No filler. Just practical guidance for Kenyan businesses and individuals navigating tax and finance.</p>
-      </div>
-      <div class="insights-grid">
-
-        <article class="insight-card reveal reveal-delay-1">
-          <div class="insight-meta">
-            <span class="insight-cat">Tax</span>
-            <span class="insight-date">May 2025</span>
-          </div>
-          <h3>KRA Amnesty 2025: Who Qualifies and How to Apply</h3>
-          <p>The KRA tax amnesty window is open. Here's exactly who qualifies, what penalties are waived, and the steps to take before the deadline.</p>
-          <a href="#contact" class="insight-read">Read More →</a>
-        </article>
-
-        <article class="insight-card reveal reveal-delay-2">
-          <div class="insight-meta">
-            <span class="insight-cat">VAT</span>
-            <span class="insight-date">Apr 2025</span>
-          </div>
-          <h3>The 5 Most Common VAT Errors Kenyan SMEs Make</h3>
-          <p>From wrong tax codes to missed input claims, these are the VAT mistakes that quietly cost businesses money, and how to fix them.</p>
-          <a href="#contact" class="insight-read">Read More →</a>
-        </article>
-
-        <article class="insight-card reveal reveal-delay-3">
-          <div class="insight-meta">
-            <span class="insight-cat">Business Finance</span>
-            <span class="insight-date">Mar 2025</span>
-          </div>
-          <h3>Building a Cashflow Projection Your Bank Will Actually Believe</h3>
-          <p>Most cashflow projections are overly optimistic and instantly dismissed. Here's what lenders actually look for, and how to build a model that holds up.</p>
-          <a href="#contact" class="insight-read">Read More →</a>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ── CTA BANNER ─────────────────────────────────── -->
-  <div id="cta-banner" role="complementary" aria-label="Call to action">
-    <div class="cta-inner">
-      <div class="cta-text">
-        <h2>Ready to Take Control of Your Financial Future?</h2>
-        <p>No pressure. No jargon. Just a real conversation about what you need.</p>
-      </div>
-      <a href="#contact" class="btn-white">Book a Free Consultation</a>
-    </div>
+  <div class="footer-bottom">
+    <p>&#169; 2025 Cashcare Financials Consultancy. All rights reserved.</p>
+    <p><a href="#">Privacy Policy</a> &middot; <a href="#">Terms</a></p>
   </div>
+</footer>
 
-  <!-- ── CONTACT ────────────────────────────────────── -->
-  <section id="contact">
-    <div class="section-wrap">
-      <div class="contact-inner">
-        <div class="contact-info reveal">
-          <span class="label">Get In Touch</span>
-          <h2>Let's Talk About Your Finances.</h2>
-          <p>We'd love to hear from you. Whether you need to sort out a compliance issue or build a full financial strategy, the conversation starts here.</p>
-
-          <div class="contact-detail">
-            <div class="contact-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18C1.61 2.09 2.47 1 3.56 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 5.98 5.98l1.28-1.28a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            </div>
-            <div class="contact-detail-text">
-              <strong>Phone</strong>
-              <span>+254 700 000 000</span>
-            </div>
-          </div>
-
-          <div class="contact-detail">
-            <div class="contact-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            </div>
-            <div class="contact-detail-text">
-              <strong>Email</strong>
-              <span>info@cashcarefinancials.co.ke</span>
-            </div>
-          </div>
-
-          <div class="contact-detail">
-            <div class="contact-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            </div>
-            <div class="contact-detail-text">
-              <strong>Office</strong>
-              <span>Nairobi, Kenya</span>
-            </div>
-          </div>
-
-          <div class="contact-detail">
-            <div class="contact-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            </div>
-            <div class="contact-detail-text">
-              <strong>Office Hours</strong>
-              <span>Mon – Fri, 8:00 AM – 6:00 PM EAT</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="contact-form reveal reveal-delay-2" role="form" aria-label="Contact form">
-          <h3>Send Us a Message</h3>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="fname">First Name</label>
-              <input type="text" id="fname" name="fname" placeholder="Your first name" autocomplete="given-name" />
-            </div>
-            <div class="form-group">
-              <label for="lname">Last Name</label>
-              <input type="text" id="lname" name="lname" placeholder="Your last name" autocomplete="family-name" />
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" />
-          </div>
-          <div class="form-group">
-            <label for="phone">Phone Number (Optional)</label>
-            <input type="tel" id="phone" name="phone" placeholder="+254 7XX XXX XXX" autocomplete="tel" />
-          </div>
-          <div class="form-group">
-            <label for="service">Service of Interest</label>
-            <select id="service" name="service">
-              <option value="">Select a service...</option>
-              <option>Tax Consultancy</option>
-              <option>Auditing</option>
-              <option>Professional Bookkeeping</option>
-              <option>KRA Income Tax Reports</option>
-              <option>VAT &amp; Monthly PAYE</option>
-              <option>Amnesty Filing</option>
-              <option>Budgeting &amp; Cashflow Projections</option>
-              <option>Income Tax Amendments</option>
-              <option>Business Model Building</option>
-              <option>Other / Not Sure</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" placeholder="Tell us a little about what you need..."></textarea>
-          </div>
-          <button type="button" class="form-submit" onclick="handleSubmit()">Send Message →</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── FOOTER ─────────────────────────────────────── -->
-  <footer role="contentinfo">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <div class="footer-logo">Cashcare Financials</div>
-        <div class="footer-tagline">Consultancy</div>
-        <p>Expert tax, audit, and financial advisory services for Kenyan businesses and individuals, delivered with precision and care.</p>
-        <div class="footer-socials">
-          <a href="#" class="footer-social-link" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          </a>
-          <a href="#" class="footer-social-link" aria-label="Twitter / X">
-            <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
-          </a>
-        </div>
-      </div>
-
-      <div class="footer-col">
-        <h4>Services</h4>
-        <ul class="footer-links">
-          <li><a href="#services">Tax Consultancy</a></li>
-          <li><a href="#services">Auditing</a></li>
-          <li><a href="#services">Bookkeeping</a></li>
-          <li><a href="#services">KRA Returns</a></li>
-          <li><a href="#services">VAT &amp; PAYE</a></li>
-          <li><a href="#services">Amnesty Filing</a></li>
-          <li><a href="#services">Business Models</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>Company</h4>
-        <ul class="footer-links">
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#results">Case Studies</a></li>
-          <li><a href="#insights">Insights</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms of Service</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <ul class="footer-links">
-          <li><a href="mailto:info@cashcarefinancials.co.ke">info@cashcarefinancials.co.ke</a></li>
-          <li><a href="tel:+254700000000">+254 700 000 000</a></li>
-          <li><a href="#">Nairobi, Kenya</a></li>
-          <li><a href="#contact">Book a Consultation</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <p>© 2025 Cashcare Financials Consultancy. All rights reserved.</p>
-      <p><a href="#">Privacy Policy</a> · <a href="#">Terms</a></p>
-    </div>
-  </footer>
-
-  <script>
-    // ── NAVBAR SCROLL ──────────────────────────────────
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-      navbar.classList.toggle('scrolled', window.scrollY > 80);
-    }, { passive: true });
-
-    // ── MOBILE DRAWER ──────────────────────────────────
-    const hamburger = document.getElementById('hamburger-btn');
-    const drawer = document.getElementById('mobile-drawer');
-    const overlay = document.getElementById('drawer-overlay');
-    const drawerClose = document.getElementById('drawer-close');
-
-    function openDrawer() {
-      drawer.classList.add('open');
-      overlay.classList.add('open');
-      hamburger.setAttribute('aria-expanded', 'true');
-      document.body.style.overflow = 'hidden';
-    }
-    function closeDrawer() {
-      drawer.classList.remove('open');
-      overlay.classList.remove('open');
-      hamburger.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-    }
-    hamburger.addEventListener('click', openDrawer);
-    drawerClose.addEventListener('click', closeDrawer);
-    overlay.addEventListener('click', closeDrawer);
-    drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
-
-    // ── SCROLL REVEAL ──────────────────────────────────
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          observer.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-    // ── COUNT UP ───────────────────────────────────────
-    function animateCount(el) {
-      const target = parseInt(el.dataset.target);
-      const suffix = el.dataset.suffix || '';
-      const duration = 1800;
-      const start = performance.now();
-      function step(now) {
-        const elapsed = now - start;
-        const progress = Math.min(elapsed / duration, 1);
-        const eased = 1 - Math.pow(1 - progress, 3);
-        const current = Math.floor(eased * target);
-        el.textContent = current.toLocaleString() + suffix;
-        if (progress < 1) requestAnimationFrame(step);
-      }
-      requestAnimationFrame(step);
-    }
-
-    const statObserver = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.querySelectorAll('[data-target]').forEach(animateCount);
-          statObserver.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.3 });
-    const statsSection = document.getElementById('stats');
-    if (statsSection) statObserver.observe(statsSection);
-
-    // ── FORM SUBMIT ────────────────────────────────────
-    function handleSubmit() {
-      const btn = document.querySelector('.form-submit');
-      btn.textContent = '✓ Message Sent!';
-      btn.style.background = '#1A3C34';
-      btn.style.cursor = 'default';
-      setTimeout(() => {
-        btn.textContent = 'Send Message →';
-        btn.style.background = '';
-        btn.style.cursor = '';
-      }, 4000);
-    }
-
-    // ── ACTIVE NAV LINK ON SCROLL ──────────────────────
-    const sections = document.querySelectorAll('section[id], div[id="trust-bar"]');
-    const navLinks = document.querySelectorAll('.nav-links a');
-    window.addEventListener('scroll', () => {
-      let current = '';
-      sections.forEach(s => {
-        if (window.scrollY >= s.offsetTop - 160) current = s.id;
-      });
-      navLinks.forEach(a => {
-        a.classList.toggle('active', a.getAttribute('href') === '#' + current);
-      });
-    }, { passive: true });
-  </script>
+<script src="shared.js"></script>
+<script>
+  // Count-up on stats
+  function animateCount(el) {
+    const target = parseInt(el.dataset.target), suffix = el.dataset.suffix || '', dur = 1800, start = performance.now();
+    (function step(now) {
+      const p = Math.min((now-start)/dur,1), e = 1-Math.pow(1-p,3);
+      el.textContent = Math.floor(e*target).toLocaleString()+suffix;
+      if(p<1) requestAnimationFrame(step);
+    })(start);
+  }
+  new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.querySelectorAll('[data-target]').forEach(animateCount); } });
+  },{threshold:0.3}).observe(document.getElementById('stats'));
+</script>
 </body>
 </html>

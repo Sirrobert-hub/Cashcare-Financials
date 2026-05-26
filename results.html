@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Case Studies | Cashcare Financials</title>
+  <meta name="description" content="Real client outcomes from Cashcare Financials covering tax recovery, compliance, and financing."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@1,400;1,500&family=Dancing+Script:wght@600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="shared.css"/>
+  <style>
+.results-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:60px; }
+.result-card { background:var(--sand);border-radius:var(--radius);padding:40px;transition:box-shadow 0.3s,transform 0.3s;position:relative;overflow:hidden; }
+.result-card:hover { box-shadow:0 12px 40px rgba(0,0,0,0.09);transform:translateY(-4px); }
+.result-tag { font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;display:block; }
+.result-client { font-size:13px;color:var(--muted);margin-bottom:20px;line-height:1.5; }
+.result-card h3 { font-size:20px;margin-bottom:14px; }
+.result-card p { font-size:15px;margin-bottom:24px; }
+.result-outcome { border-top:1px solid rgba(0,0,0,0.07);padding-top:20px; }
+.result-big { font-family:"Playfair Display",serif;font-size:40px;color:var(--gold);font-weight:700;line-height:1;display:block; }
+.result-desc { font-size:13px;color:var(--muted);margin-top:6px;line-height:1.5; }
+.result-steps { margin-top:18px;display:flex;flex-direction:column;gap:10px; }
+.result-step { display:flex;gap:10px;align-items:flex-start; }
+.step-dot { width:20px;height:20px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px; }
+.step-dot svg { width:10px;height:10px;stroke:#fff;fill:none;stroke-width:2.5; }
+.step-text { font-size:14px;color:var(--muted);line-height:1.55; }
+@media(max-width:1024px){ .results-grid{grid-template-columns:1fr 1fr;} }
+@media(max-width:640px){ .results-grid{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+<nav id="navbar" class="solid" role="navigation" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo" aria-label="Cashcare Financials home">
+    <span class="nav-logo-top">Cashcare</span>
+    <span class="nav-logo-sub">Financials Consultancy</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="results.html">Results</a></li>
+    <li><a href="insights.html">Insights</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Book a Consultation</a>
+  <button class="hamburger" id="hamburger-btn" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div id="drawer-overlay"></div>
+<nav id="mobile-drawer" role="dialog" aria-label="Mobile navigation">
+  <button id="drawer-close" aria-label="Close menu">&#x2715;</button>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="results.html">Results</a>
+  <a href="insights.html">Insights</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" style="color:var(--gold);margin-top:16px;font-size:20px;">Book a Consultation &rarr;</a>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-geo" aria-hidden="true"></div>
+  <div class="page-hero-inner section-wrap">
+    <span class="label">Case Studies</span>
+    <h1>Real Clients. Real Outcomes.</h1>
+    <p>Specificity builds trust. Here is a look at what working with Cashcare Financials actually delivers.</p>
+  </div>
+</div>
+
+<section>
+  <div class="section-wrap">
+    <div class="results-grid">
+
+      <article class="result-card reveal reveal-delay-1">
+        <span class="result-tag">Amnesty Filing</span>
+        <p class="result-client">A Nairobi-based logistics company with 23 employees</p>
+        <h3>Four Years of KRA Arrears Cleared in Six Weeks</h3>
+        <p>The business had not filed returns since 2020. A KRA compliance notice threatened their ability to tender for government contracts. They needed it resolved fast.</p>
+        <div class="result-steps">
+          <div class="result-step"><div class="step-dot"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div class="step-text">Reviewed all four years of income, VAT, and PAYE obligations</div></div>
+          <div class="result-step"><div class="step-dot"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div class="step-text">Filed all outstanding returns across all obligation types</div></div>
+          <div class="result-step"><div class="step-dot"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div class="step-text">Negotiated waiver of penalties under the amnesty window</div></div>
+        </div>
+        <div class="result-outcome">
+          <span class="result-big">4 Years</span>
+          <span class="result-desc">Full compliance restored. Zero business disruption. Contract tendering resumed within 8 weeks.</span>
+        </div>
+      </article>
+
+      <article class="result-card reveal reveal-delay-2">
+        <span class="result-tag">Business Model Building</span>
+        <p class="result-client">A family-owned restaurant group, Nairobi</p>
+        <h3>KES 8M Bank Loan Approved After Two Years of Rejections</h3>
+        <p>The owners had approached three banks and been rejected each time. Their financials were real and strong, but the story they told on paper was not convincing lenders.</p>
+        <div class="result-steps">
+          <div class="result-step"><div class="step-dot"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div class="step-text">Built a three-year financial model with full unit economics per outlet</div></div>
+          <div class="result-step"><div class="step-dot"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div class="step-text">Created scenario analysis showing conservative, base, and optimistic cases</div></div>
+          <div class="result-step"><div class="step-dot"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div class="step-text">Presented alongside a cleaned set of historical management accounts</div></div>
+        </div>
+        <div class="result-outcome">
+          <span class="result-big">KES 8M</span>
+          <span class="result-desc">Loan approved within 30 days. Second branch opened six months later.</span>
+        </div>
+      </article>
+
+      <article class="result-card reveal reveal-delay-3">
+        <span class="result-tag">Tax and Bookkeeping</span>
+        <p class="result-client">A retail chain with three branches, Central Kenya</p>
+        <h3>KES 240,000 in Overpaid Tax Recovered</h3>
+        <p>We were engaged to clean up their books and found a pattern of misclassified VAT input claims and a missed deduction across two financial years. The client had no idea they were owed money by KRA.</p>
+        <div class="result-steps">
+          <div class="result-step"><div class="step-dot"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div class="step-text">Reviewed all VAT submissions and income tax returns for 2022 and 2023</div></div>
+          <div class="result-step"><div class="step-dot"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div class="step-text">Filed income tax amendments with supporting documentation</div></div>
+          <div class="result-step"><div class="step-dot"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div class="step-text">Restructured their VAT process to prevent the same error going forward</div></div>
+        </div>
+        <div class="result-outcome">
+          <span class="result-big">KES 240K</span>
+          <span class="result-desc">Recovered in overpaid tax. Client now on a monthly retainer.</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+<div id="cta-banner" role="complementary">
+  <div class="cta-inner">
+    <div class="cta-text">
+      <h2>Ready to Take Control of Your Financial Future?</h2>
+      <p>No pressure. No jargon. Just a real conversation about what you need.</p>
+    </div>
+    <a href="contact.html" class="btn-white">Book a Free Consultation</a>
+  </div>
+</div>
+
+<footer role="contentinfo">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">Cashcare Financials</div>
+      <div class="footer-tagline">Consultancy</div>
+      <p>Expert tax, audit, and financial advisory for Kenyan businesses and individuals, delivered with precision and care.</p>
+      <div class="footer-socials">
+        <a href="#" class="footer-social-link" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="#" class="footer-social-link" aria-label="Twitter">
+          <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul class="footer-links">
+        <li><a href="services.html">Tax Consultancy</a></li>
+        <li><a href="services.html">Auditing</a></li>
+        <li><a href="services.html">Bookkeeping</a></li>
+        <li><a href="services.html">KRA Returns</a></li>
+        <li><a href="services.html">VAT &amp; PAYE</a></li>
+        <li><a href="services.html">Amnesty Filing</a></li>
+        <li><a href="services.html">Business Models</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul class="footer-links">
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="results.html">Case Studies</a></li>
+        <li><a href="insights.html">Insights</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul class="footer-links">
+        <li><a href="mailto:info@cashcarefinancials.co.ke">info@cashcarefinancials.co.ke</a></li>
+        <li><a href="tel:+254700000000">+254 700 000 000</a></li>
+        <li><a>Nairobi, Kenya</a></li>
+        <li><a href="contact.html">Book a Consultation</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Cashcare Financials Consultancy. All rights reserved.</p>
+    <p><a href="#">Privacy Policy</a> &middot; <a href="#">Terms</a></p>
+  </div>
+</footer>
+<script src="shared.js"></script>
+</body>
+</html>

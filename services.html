@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Services | Cashcare Financials</title>
+  <meta name="description" content="Nine financial services covering tax, audit, bookkeeping, KRA compliance and business modelling."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@1,400;1,500&family=Dancing+Script:wght@600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="shared.css"/>
+  <style>
+.services-full { display: flex; flex-direction: column; gap: 80px; }
+.svc-block { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.svc-block.reverse .svc-visual { order: -1; }
+.svc-visual { background: var(--green); border-radius: 16px; aspect-ratio: 1; display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden; }
+.svc-visual-num { font-family:"Playfair Display",serif;font-size:120px;color:rgba(201,150,59,0.1);font-weight:700;line-height:1; }
+.svc-visual-icon { position:absolute;width:80px;height:80px;background:rgba(201,150,59,0.15);border-radius:20px;display:flex;align-items:center;justify-content:center; }
+.svc-visual-icon svg { width:40px;height:40px;stroke:var(--gold);fill:none;stroke-width:1.4; }
+.svc-content .label { margin-bottom:10px; }
+.svc-content h2 { font-size:clamp(26px,3vw,38px);margin-bottom:18px; }
+.svc-content p { margin-bottom:14px; }
+.svc-who { background:var(--sand);border-radius:var(--radius);padding:22px 26px;margin-top:20px; }
+.svc-who strong { font-size:13px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--text);display:block;margin-bottom:10px; }
+.svc-who ul { list-style:none;display:flex;flex-direction:column;gap:7px; }
+.svc-who li { font-size:14px;color:var(--muted);padding-left:18px;position:relative; }
+.svc-who li::before { content:"";position:absolute;left:0;top:10px;width:6px;height:6px;border-radius:50%;background:var(--gold); }
+.faq-section { background:var(--sand);padding:80px 0; }
+.faq-wrap { max-width:800px;margin:0 auto; }
+.faq-item { border-bottom:1px solid rgba(0,0,0,0.08); }
+.faq-q { width:100%;background:none;border:none;text-align:left;padding:22px 0;font-family:"DM Sans",sans-serif;font-size:17px;font-weight:600;color:var(--text);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px; }
+.faq-q .faq-icon { width:24px;height:24px;border-radius:50%;background:var(--gold);color:#fff;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;transition:transform 0.3s; }
+.faq-item.open .faq-icon { transform:rotate(45deg); }
+.faq-a { max-height:0;overflow:hidden;transition:max-height 0.4s ease,padding 0.3s; }
+.faq-a p { font-size:16px;padding-bottom:22px;color:var(--muted); }
+@media(max-width:1024px){ .svc-block{grid-template-columns:1fr;gap:40px;} .svc-block.reverse .svc-visual{order:0;} .svc-visual{aspect-ratio:3/2;} }
+</style>
+</head>
+<body>
+<nav id="navbar" class="solid" role="navigation" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo" aria-label="Cashcare Financials home">
+    <span class="nav-logo-top">Cashcare</span>
+    <span class="nav-logo-sub">Financials Consultancy</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="results.html">Results</a></li>
+    <li><a href="insights.html">Insights</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Book a Consultation</a>
+  <button class="hamburger" id="hamburger-btn" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div id="drawer-overlay"></div>
+<nav id="mobile-drawer" role="dialog" aria-label="Mobile navigation">
+  <button id="drawer-close" aria-label="Close menu">&#x2715;</button>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="results.html">Results</a>
+  <a href="insights.html">Insights</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" style="color:var(--gold);margin-top:16px;font-size:20px;">Book a Consultation &rarr;</a>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-geo" aria-hidden="true"></div>
+  <div class="page-hero-inner section-wrap">
+    <span class="label">Services</span>
+    <h1>Nine Ways We Help You.</h1>
+    <p>Every service we offer is designed to solve a specific financial challenge. Here is the full picture.</p>
+  </div>
+</div>
+
+<section>
+  <div class="section-wrap">
+    <div class="services-full">
+
+      <div class="svc-block reveal">
+        <div class="svc-visual"><span class="svc-visual-num">01</span><div class="svc-visual-icon"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><rect x="3" y="3" width="18" height="18" rx="2"/></svg></div></div>
+        <div class="svc-content">
+          <span class="label">Service 01</span>
+          <h2>Tax Consultancy</h2>
+          <p>Tax should not be a guessing game. We work with you to understand your full income picture, identify legitimate deductions, and structure your affairs to minimise your tax liability within the bounds of Kenyan law.</p>
+          <p>Whether you are an individual, a sole proprietor, or a registered company, we build a tax strategy that fits your situation, not a template.</p>
+          <div class="svc-who">
+            <strong>Who this is for</strong>
+            <ul>
+              <li>Business owners wanting to reduce their tax burden legally</li>
+              <li>Individuals with multiple income streams</li>
+              <li>Companies preparing for a financial audit or due diligence</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="svc-block reverse reveal" style="background:var(--sand);border-radius:16px;padding:60px;">
+        <div class="svc-content">
+          <span class="label">Service 02</span>
+          <h2>Auditing</h2>
+          <p>Our independent audits examine your financial statements, internal controls, and processes to give you and your stakeholders total confidence in your numbers.</p>
+          <p>We conduct statutory audits, management audits, and donor compliance audits for NGOs and funded organisations.</p>
+          <div class="svc-who">
+            <strong>Who this is for</strong>
+            <ul>
+              <li>Companies required to file audited accounts by law</li>
+              <li>NGOs with donor reporting requirements</li>
+              <li>Businesses seeking investor or bank financing</li>
+            </ul>
+          </div>
+        </div>
+        <div class="svc-visual"><span class="svc-visual-num">02</span><div class="svc-visual-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div></div>
+      </div>
+
+      <div class="svc-block reveal">
+        <div class="svc-visual"><span class="svc-visual-num">03</span><div class="svc-visual-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div></div>
+        <div class="svc-content">
+          <span class="label">Service 03</span>
+          <h2>Professional Bookkeeping</h2>
+          <p>Messy books cost you money in overpaid tax, missed deductions, and poor decisions. We keep your records accurate, categorised correctly, and up to date so you always know where you stand.</p>
+          <p>We work with QuickBooks, Sage, Wave, and Excel-based systems depending on your preference.</p>
+          <div class="svc-who">
+            <strong>Who this is for</strong>
+            <ul>
+              <li>SMEs without a full-time accountant</li>
+              <li>Businesses needing to catch up on months of backlogged records</li>
+              <li>Any organisation that wants clean monthly management accounts</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="svc-block reverse reveal" style="background:var(--sand);border-radius:16px;padding:60px;">
+        <div class="svc-content">
+          <span class="label">Service 04</span>
+          <h2>KRA Income Tax Reports</h2>
+          <p>Income tax returns are non-negotiable, and late or incorrect filing attracts costly penalties. We prepare and submit your annual income tax returns accurately and on time, whether you are employed, self-employed, or running a company.</p>
+          <div class="svc-who">
+            <strong>Who this is for</strong>
+            <ul>
+              <li>Employed individuals with a KRA PIN obligation</li>
+              <li>Self-employed professionals and consultants</li>
+              <li>Companies filing corporate income tax returns</li>
+            </ul>
+          </div>
+        </div>
+        <div class="svc-visual"><span class="svc-visual-num">04</span><div class="svc-visual-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div></div>
+      </div>
+
+      <div class="svc-block reveal">
+        <div class="svc-visual"><span class="svc-visual-num">05</span><div class="svc-visual-icon"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div></div>
+        <div class="svc-content">
+          <span class="label">Service 05</span>
+          <h2>VAT and Monthly PAYE</h2>
+          <p>VAT and PAYE obligations are monthly, mandatory, and unforgiving of errors. We manage your filings end-to-end: capturing the right figures, filing on the iTax portal, and sending you a summary every month so you always know what was paid.</p>
+          <div class="svc-who">
+            <strong>Who this is for</strong>
+            <ul>
+              <li>VAT-registered businesses</li>
+              <li>Employers with salaried staff</li>
+              <li>Businesses wanting to outsource their recurring compliance entirely</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="svc-block reverse reveal" style="background:var(--sand);border-radius:16px;padding:60px;">
+        <div class="svc-content">
+          <span class="label">Service 06</span>
+          <h2>Amnesty Filing</h2>
+          <p>If you are behind on KRA filings, the worst thing you can do is ignore the problem. We manage the full amnesty process: reviewing your obligations, filing all outstanding returns, engaging KRA where necessary, and restoring your compliance status cleanly.</p>
+          <div class="svc-who">
+            <strong>Who this is for</strong>
+            <ul>
+              <li>Businesses with years of unfiled returns</li>
+              <li>Individuals who have never filed despite having a PIN</li>
+              <li>Anyone who received a KRA compliance notice</li>
+            </ul>
+          </div>
+        </div>
+        <div class="svc-visual"><span class="svc-visual-num">06</span><div class="svc-visual-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div></div>
+      </div>
+
+      <div class="svc-block reveal">
+        <div class="svc-visual"><span class="svc-visual-num">07</span><div class="svc-visual-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div></div>
+        <div class="svc-content">
+          <span class="label">Service 07</span>
+          <h2>Budgeting and Cashflow Projections</h2>
+          <p>A budget you built in January is useless by March if it is not grounded in reality. We build detailed, assumption-driven budgets and rolling cashflow forecasts that actually help you make decisions month to month.</p>
+          <div class="svc-who">
+            <strong>Who this is for</strong>
+            <ul>
+              <li>Businesses planning an expansion or new product line</li>
+              <li>Startups preparing for investor conversations</li>
+              <li>Any organisation that needs to manage cash position proactively</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="svc-block reverse reveal" style="background:var(--sand);border-radius:16px;padding:60px;">
+        <div class="svc-content">
+          <span class="label">Service 08</span>
+          <h2>Income Tax Amendments</h2>
+          <p>Filed a return with errors or omissions? An unaddressed mistake compounds over time. We review your previous filings, identify the discrepancies, and handle the amendment process with KRA to correct the record and eliminate your exposure.</p>
+          <div class="svc-who">
+            <strong>Who this is for</strong>
+            <ul>
+              <li>Individuals or businesses who suspect they overpaid tax</li>
+              <li>Anyone who filed returns with missing income or deductions</li>
+              <li>Clients who had their books redone and discovered discrepancies</li>
+            </ul>
+          </div>
+        </div>
+        <div class="svc-visual"><span class="svc-visual-num">08</span><div class="svc-visual-icon"><svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></div></div>
+      </div>
+
+      <div class="svc-block reveal">
+        <div class="svc-visual"><span class="svc-visual-num">09</span><div class="svc-visual-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div></div>
+        <div class="svc-content">
+          <span class="label">Service 09</span>
+          <h2>Business Model Building</h2>
+          <p>Whether you are launching a startup, pitching to investors, or applying for a bank loan, you need a financial model that is credible, detailed, and tells a coherent story. We build them from scratch, tailored to your specific business and audience.</p>
+          <div class="svc-who">
+            <strong>Who this is for</strong>
+            <ul>
+              <li>Entrepreneurs launching a new venture</li>
+              <li>Established businesses applying for loans or grants</li>
+              <li>Founders preparing investor pitch decks with financial appendices</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="faq-section">
+  <div class="section-wrap">
+    <div class="faq-wrap">
+      <div class="section-header reveal" style="max-width:100%;">
+        <span class="label">FAQ</span>
+        <h2>Questions We Hear Most Often</h2>
+      </div>
+      <div class="faq-item reveal reveal-delay-1">
+        <button class="faq-q">How quickly can you get my KRA filings up to date?<span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>For most clients with one to three years of backlog, we can complete filings within two to four weeks depending on how quickly you can supply your records. For larger backlogs, we work in phases and keep you updated throughout.</p></div>
+      </div>
+      <div class="faq-item reveal reveal-delay-2">
+        <button class="faq-q">Do you work with individuals or only businesses?<span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>Both. We handle personal income tax returns for employed individuals, freelancers, and consultants, as well as full-service tax and accounting for SMEs and larger organisations.</p></div>
+      </div>
+      <div class="faq-item reveal reveal-delay-3">
+        <button class="faq-q">What documents do I need to get started?<span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>It depends on the service. For tax returns, you typically need your KRA PIN, payslips or income records, and any receipts for deductible expenses. We will send you a personalised checklist after your first consultation so you know exactly what to prepare.</p></div>
+      </div>
+      <div class="faq-item reveal reveal-delay-4">
+        <button class="faq-q">How much does a consultation cost?<span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>Your first call is free. After that, we quote based on the scope of work, not arbitrary hourly rates. You will always know what you are paying before we start.</p></div>
+      </div>
+      <div class="faq-item reveal reveal-delay-5">
+        <button class="faq-q">Can you handle my monthly compliance on an ongoing basis?<span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>Yes. Many of our clients are on monthly retainers for VAT, PAYE, and bookkeeping. We handle everything and send you a summary each month so you can focus on running your business.</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const ans  = item.querySelector('.faq-a');
+      const open = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-a').style.maxHeight = '0';
+      });
+      if (!open) {
+        item.classList.add('open');
+        ans.style.maxHeight = ans.scrollHeight + 'px';
+      }
+    });
+  });
+</script>
+<div id="cta-banner" role="complementary">
+  <div class="cta-inner">
+    <div class="cta-text">
+      <h2>Ready to Take Control of Your Financial Future?</h2>
+      <p>No pressure. No jargon. Just a real conversation about what you need.</p>
+    </div>
+    <a href="contact.html" class="btn-white">Book a Free Consultation</a>
+  </div>
+</div>
+
+<footer role="contentinfo">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">Cashcare Financials</div>
+      <div class="footer-tagline">Consultancy</div>
+      <p>Expert tax, audit, and financial advisory for Kenyan businesses and individuals, delivered with precision and care.</p>
+      <div class="footer-socials">
+        <a href="#" class="footer-social-link" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="#" class="footer-social-link" aria-label="Twitter">
+          <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul class="footer-links">
+        <li><a href="services.html">Tax Consultancy</a></li>
+        <li><a href="services.html">Auditing</a></li>
+        <li><a href="services.html">Bookkeeping</a></li>
+        <li><a href="services.html">KRA Returns</a></li>
+        <li><a href="services.html">VAT &amp; PAYE</a></li>
+        <li><a href="services.html">Amnesty Filing</a></li>
+        <li><a href="services.html">Business Models</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul class="footer-links">
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="results.html">Case Studies</a></li>
+        <li><a href="insights.html">Insights</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul class="footer-links">
+        <li><a href="mailto:info@cashcarefinancials.co.ke">info@cashcarefinancials.co.ke</a></li>
+        <li><a href="tel:+254700000000">+254 700 000 000</a></li>
+        <li><a>Nairobi, Kenya</a></li>
+        <li><a href="contact.html">Book a Consultation</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Cashcare Financials Consultancy. All rights reserved.</p>
+    <p><a href="#">Privacy Policy</a> &middot; <a href="#">Terms</a></p>
+  </div>
+</footer>
+<script src="shared.js"></script>
+</body>
+</html>
