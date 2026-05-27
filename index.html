@@ -1,632 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Cashcare Financials: Tax Consultants &amp; Auditors</title>
-  <meta name="description" content="Cashcare Financials Consultancy: expert tax consultancy, auditing, bookkeeping, KRA income tax reports, VAT, PAYE, and financial advisory services."/>
-  <meta property="og:title" content="Cashcare Financials Consultancy"/>
-  <meta property="og:description" content="Precision. Purpose. Partnership. Expert financial consultancy in Kenya."/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@1,400;1,500&family=Dancing+Script:wght@600&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="shared.css"/>
-  <style>
-    /* HERO - green full viewport */
-    #hero {
-      min-height: 100vh;
-      background: var(--green);
-      position: relative;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-    }
-    .hero-geo { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
-    .hero-geo::before {
-      content: ''; position: absolute; right: -10%; top: 10%;
-      width: 55vw; height: 55vw; max-width: 700px; max-height: 700px;
-      border-radius: 50%; border: 1px solid rgba(201,150,59,0.15);
-    }
-    .hero-geo::after {
-      content: ''; position: absolute; right: -5%; top: 15%;
-      width: 42vw; height: 42vw; max-width: 540px; max-height: 540px;
-      border-radius: 50%; border: 1px solid rgba(201,150,59,0.1);
-    }
-    .hero-line {
-      position: absolute; bottom: 0; left: 0; width: 100%; height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(201,150,59,0.4), transparent);
-    }
-    .hero-gold-bar {
-      position: absolute; left: 5%; top: 0; bottom: 0; width: 3px;
-      background: linear-gradient(180deg, transparent, var(--gold) 30%, var(--gold) 70%, transparent);
-      opacity: 0.35;
-    }
-    .hero-inner {
-      position: relative; z-index: 2;
-      padding: 120px 5% 80px; max-width: 1300px; margin: 0 auto; width: 100%;
-    }
-    .hero-label {
-      display: inline-flex; align-items: center; gap: 10px; margin-bottom: 28px;
-      opacity: 0; animation: fadeUp 0.8s ease 0.2s forwards;
-    }
-    .hero-label span { font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); }
-    .hero-label::before { content: ''; display: block; width: 32px; height: 1px; background: var(--gold); }
-    .hero-h1 {
-      color: var(--cream); max-width: 800px;
-      opacity: 0; animation: fadeUp 0.9s ease 0.35s forwards;
-    }
-    .hero-h1 em { font-style: italic; color: var(--gold); }
-    .hero-sub {
-      margin-top: 24px; font-size: 18px; color: rgba(248,245,239,0.7);
-      max-width: 520px; line-height: 1.65;
-      opacity: 0; animation: fadeUp 0.9s ease 0.5s forwards;
-    }
-    .hero-btns {
-      margin-top: 44px; display: flex; gap: 16px; flex-wrap: wrap;
-      opacity: 0; animation: fadeUp 0.9s ease 0.65s forwards;
-    }
-    .btn-ghost-hero {
-      background: transparent; color: var(--cream);
-      padding: 15px 32px; border-radius: 4px; border: 1px solid rgba(248,245,239,0.35);
-      font-weight: 500; font-size: 15px; text-decoration: none;
-      transition: border-color 0.2s, background 0.2s;
-    }
-    .btn-ghost-hero:hover { border-color: var(--gold); background: rgba(201,150,59,0.08); }
-    .hero-scroll {
-      margin-top: 80px; display: flex; align-items: center; gap: 10px;
-      opacity: 0; animation: fadeIn 1s ease 1.1s forwards;
-    }
-    .hero-scroll-line { width: 1px; height: 40px; background: linear-gradient(180deg, var(--gold), transparent); }
-    .hero-scroll span { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(248,245,239,0.45); writing-mode: vertical-rl; }
-
-    /* TRUST BAR - expanded with founder cards */
-    #trust-bar { background: var(--sand); border-bottom: 1px solid rgba(0,0,0,0.05); }
-    .trust-inner-expanded {
-      max-width: 1300px; margin: 0 auto;
-      display: flex; align-items: flex-start; gap: 48px; flex-wrap: wrap; padding: 36px 5%;
-    }
-    .trust-credentials { display: flex; flex-direction: column; gap: 14px; min-width: 220px; }
-    .trust-label { font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
-    .trust-items { display: flex; flex-direction: column; gap: 10px; }
-    .trust-item { font-size: 13px; font-weight: 500; color: var(--muted); display: flex; align-items: center; gap: 7px; }
-    .trust-item svg { color: var(--gold); flex-shrink: 0; }
-    .trust-divider-v { width: 1px; background: rgba(0,0,0,0.08); align-self: stretch; min-height: 80px; }
-    .trust-founders { flex: 1; min-width: 280px; display: flex; flex-direction: column; gap: 16px; }
-    .trust-founder-cards { display: flex; gap: 24px; flex-wrap: wrap; }
-    .trust-founder-card { display: flex; align-items: flex-start; gap: 14px; flex: 1; min-width: 240px; }
-    .trust-founder-photo {
-      width: 64px; height: 64px; border-radius: 50%; background: var(--green);
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0; overflow: hidden; border: 2px solid rgba(201,150,59,0.3);
-    }
-    .trust-founder-photo span { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--gold); letter-spacing: 0.03em; }
-    .trust-founder-photo img { width: 100%; height: 100%; object-fit: cover; }
-    .trust-founder-info { display: flex; flex-direction: column; gap: 2px; }
-    .trust-founder-info strong { font-size: 15px; font-weight: 600; color: var(--text); line-height: 1.3; }
-    .trust-founder-info span { font-size: 12px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
-    .trust-founder-info p { font-size: 13px; color: var(--muted); line-height: 1.55; margin: 0; }
-
-    /* SERVICES */
-    #services-teaser { background: var(--cream); }
-    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .view-all-wrap { margin-top: 36px; }
-    .view-all { font-size: 14px; font-weight: 600; color: var(--green); text-decoration: none; display: inline-flex; align-items: center; gap: 7px; transition: gap 0.2s, color 0.2s; }
-    .view-all:hover { gap: 12px; color: var(--gold); }
-
-    /* ABOUT TEASER */
-    #about-teaser { background: var(--sand); }
-    .about-inner { display: grid; grid-template-columns: 1fr 1.1fr; gap: 80px; align-items: center; }
-    .about-img-wrap { position: relative; }
-    .about-img-box { background: var(--green); border-radius: 12px; aspect-ratio: 4/5; overflow: hidden; position: relative; }
-    .about-img-initials { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
-    .initials-big { font-family: 'Playfair Display', serif; font-size: 120px; color: rgba(201,150,59,0.15); font-weight: 700; line-height: 1; }
-    .about-img-caption { position: absolute; bottom: 28px; left: 28px; right: 28px; }
-    .about-img-caption h4 { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--cream); font-weight: 600; }
-    .about-img-caption p { font-size: 13px; color: rgba(248,245,239,0.6); margin-top: 4px; }
-    .about-gold-badge {
-      position: absolute; bottom: -20px; right: -20px;
-      width: 100px; height: 100px; background: var(--gold); border-radius: 50%;
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      text-align: center; gap: 2px; box-shadow: 0 4px 24px rgba(201,150,59,0.35);
-    }
-    .about-gold-badge strong { font-family: 'Playfair Display', serif; font-size: 26px; color: #fff; font-weight: 700; line-height: 1; }
-    .about-gold-badge span { font-size: 10px; color: rgba(255,255,255,0.85); text-transform: uppercase; letter-spacing: 0.06em; line-height: 1.2; }
-    .about-content .label { margin-bottom: 12px; display: block; }
-    .about-content h2 { margin-bottom: 24px; }
-    .about-content p { margin-bottom: 18px; }
-    .about-blockquote { border-left: 3px solid var(--gold); padding-left: 24px; margin: 28px 0; }
-    .about-blockquote p { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-style: italic; color: var(--text); line-height: 1.5; }
-    .signature { font-family: 'Dancing Script', cursive; font-size: 26px; color: var(--green); margin-top: 6px; }
-
-    /* STATS */
-    #stats { background: var(--green); padding: 80px 0; }
-    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; text-align: center; }
-    .stat-num { font-family: 'Playfair Display', serif; font-size: clamp(42px, 5vw, 62px); color: var(--gold); font-weight: 700; line-height: 1; }
-    .stat-label { font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(248,245,239,0.55); margin-top: 10px; line-height: 1.4; }
-    .stat-divider { width: 1px; background: rgba(201,150,59,0.2); }
-
-    /* TESTIMONIALS */
-    #testimonials { background: var(--green); padding: 80px 0 100px; border-top: 1px solid rgba(201,150,59,0.15); }
-    .testimonials-header { max-width: 500px; margin-bottom: 48px; }
-    .testimonials-header h2 { color: var(--cream); }
-    .testimonials-header p { color: rgba(248,245,239,0.6); }
-    .testimonials-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-    .testimonial-card { background: rgba(248,245,239,0.06); border: 1px solid rgba(201,150,59,0.15); border-radius: var(--radius); padding: 36px; }
-    .stars { margin-bottom: 18px; display: flex; gap: 4px; }
-    .star { color: var(--gold); font-size: 16px; }
-    .testimonial-quote { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-style: italic; color: var(--cream); line-height: 1.6; margin-bottom: 24px; }
-    .testimonial-author { display: flex; align-items: center; gap: 14px; }
-    .author-avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--gold); display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 15px; color: #fff; flex-shrink: 0; }
-    .author-name { font-weight: 600; font-size: 15px; color: var(--cream); line-height: 1.2; }
-    .author-title { font-size: 13px; color: rgba(248,245,239,0.5); margin-top: 2px; }
-
-    /* RESULTS */
-    #results-teaser { background: var(--cream); }
-    .results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 60px; }
-    .result-card { background: var(--sand); border-radius: var(--radius); padding: 40px 36px; position: relative; overflow: hidden; transition: box-shadow 0.3s, transform 0.3s; }
-    .result-card:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.09); transform: translateY(-4px); }
-    .result-tag { font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; display: block; }
-    .result-card h3 { margin-bottom: 14px; font-size: 20px; }
-    .result-card p { font-size: 15px; margin-bottom: 24px; }
-    .result-outcome { border-top: 1px solid rgba(0,0,0,0.07); padding-top: 20px; display: flex; align-items: baseline; gap: 8px; }
-    .result-big { font-family: 'Playfair Display', serif; font-size: 38px; color: var(--gold); font-weight: 700; line-height: 1; }
-    .result-desc { font-size: 13px; color: var(--muted); line-height: 1.4; }
-
-    /* INSIGHTS */
-    #insights-teaser { background: var(--sand); }
-    .insights-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 60px; }
-    .insight-card { background: var(--cream); border-radius: var(--radius); padding: 36px; transition: box-shadow 0.3s, transform 0.3s; }
-    .insight-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.08); transform: translateY(-3px); }
-    .insight-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
-    .insight-cat { font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); background: rgba(201,150,59,0.1); padding: 3px 10px; border-radius: 20px; }
-    .insight-date { font-size: 13px; color: var(--muted); }
-    .insight-card h3 { font-size: 19px; margin-bottom: 12px; color: var(--text); }
-    .insight-card p { font-size: 15px; margin-bottom: 20px; }
-    .insight-read { font-size: 14px; font-weight: 600; color: var(--green); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: gap 0.2s; }
-    .insight-read:hover { gap: 10px; color: var(--gold); }
-
-    /* RESPONSIVE */
-    @media (max-width: 1024px) {
-      .services-grid { grid-template-columns: 1fr 1fr; }
-      .stats-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
-      .stat-divider { display: none; }
-      .results-grid { grid-template-columns: 1fr 1fr; }
-    }
-    @media (max-width: 768px) {
-      .hero-btns { flex-direction: column; }
-      .about-inner { grid-template-columns: 1fr; gap: 48px; }
-      .about-img-box { aspect-ratio: 3/2; }
-      .testimonials-grid { grid-template-columns: 1fr; }
-      .trust-divider-v { display: none; }
-      .trust-founder-card { min-width: 100%; }
-      .insights-grid { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 640px) {
-      .services-grid { grid-template-columns: 1fr; }
-      .results-grid { grid-template-columns: 1fr; }
-      .stats-grid { grid-template-columns: 1fr 1fr; }
-      .btn-primary, .btn-ghost-hero { width: 100%; text-align: center; justify-content: center; }
-    }
-  </style>
+  <!DOCTYPE html>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cashcare Financials | Modern Tax & Audit</title>
+  <meta name="description" content="Modern tax consultancy, auditing, and financial advisory for Kenyan businesses. Precision, clarity, and results.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css">
 </head>
 <body>
-
-<!-- NAVBAR -->
-<nav id="navbar" role="navigation" aria-label="Main navigation">
-  <a href="index.html" class="nav-logo" aria-label="Cashcare Financials home">
-    <span class="nav-logo-top">Cashcare</span>
-    <span class="nav-logo-sub">Financials Consultancy</span>
-  </a>
-  <ul class="nav-links">
-    <li><a href="about.html">About</a></li>
-    <li><a href="services.html">Services</a></li>
-    <li><a href="results.html">Results</a></li>
-    <li><a href="insights.html">Insights</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-  <a href="contact.html" class="nav-cta">Book a Consultation</a>
-  <button class="hamburger" id="hamburger-btn" aria-label="Open menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-<div id="drawer-overlay" aria-hidden="true"></div>
-<nav id="mobile-drawer" role="dialog" aria-label="Mobile navigation" aria-modal="true">
-  <button id="drawer-close" aria-label="Close menu">&#x2715;</button>
-  <a href="about.html">About</a>
-  <a href="services.html">Services</a>
-  <a href="results.html">Results</a>
-  <a href="insights.html">Insights</a>
-  <a href="contact.html">Contact</a>
-  <a href="contact.html" style="color:var(--gold);margin-top:16px;font-size:20px;">Book a Consultation &#8594;</a>
-</nav>
-
-<!-- HERO -->
-<section id="hero" aria-label="Hero">
-  <div class="hero-geo" aria-hidden="true"></div>
-  <div class="hero-gold-bar" aria-hidden="true"></div>
-  <div class="hero-line" aria-hidden="true"></div>
-  <div class="hero-inner">
-    <div class="hero-label" aria-hidden="true">
-      <span>Cashcare Financials Consultancy</span>
-    </div>
-    <h1 class="hero-h1">
-      Your Finances,<br/>
-      Handled with<br/>
-      <em>Precision</em> &amp; Purpose.
-    </h1>
-    <p class="hero-sub">
-      Expert tax consultancy, auditing, and financial advisory, built for Kenyan businesses and individuals who want more than generic advice.
-    </p>
-    <div class="hero-btns">
-      <a href="contact.html" class="btn-primary">Book a Free Call <span class="arrow">&#8594;</span></a>
-      <a href="services.html" class="btn-ghost-hero">Explore Our Services</a>
-    </div>
-    <div class="hero-scroll" aria-hidden="true">
-      <div class="hero-scroll-line"></div>
-      <span>Scroll</span>
-    </div>
+<nav>
+  <div class="nav-container">
+    <a href="index.html" class="logo">Cashcare <span>Financials Consultancy</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="results.html">Results</a></li>
+      <li><a href="insights.html">Insights</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="btn btn-primary" style="padding:0.5rem 1.2rem;">Book a Call</a>
+    <button class="hamburger" id="menuBtn">☰</button>
   </div>
-</section>
-
-<!-- TRUST BAR - EXPANDED WITH FOUNDER CARDS -->
-<div id="trust-bar" aria-label="Why Cashcare">
-  <div class="trust-inner-expanded">
-    <div class="trust-credentials">
-      <span class="trust-label">Trusted for</span>
-      <div class="trust-items">
-        <div class="trust-item">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-          KRA Registered Consultants
-        </div>
-        <div class="trust-item">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-          ICPAK-Aligned Practices
-        </div>
-        <div class="trust-item">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-          Kenya Data Protection Compliant
-        </div>
-        <div class="trust-item">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-          Serving Clients Since 2014
-        </div>
-      </div>
-    </div>
-    <div class="trust-divider-v" aria-hidden="true"></div>
-    <div class="trust-founders">
-      <span class="trust-label">The Team Behind Your Finances</span>
-      <div class="trust-founder-cards">
-        <div class="trust-founder-card">
-          <div class="trust-founder-photo" aria-label="Photo of Ochieng Ng'ara">
-            <!-- Replace with: <img src="ochieng.jpg" alt="Ochieng Ng'ara"> -->
-            <span>ON</span>
-          </div>
-          <div class="trust-founder-info">
-            <strong>Ochieng&#8217; Ng&#8217;ara</strong>
-            <span>Founder &amp; Lead Consultant</span>
-            <p>CPA-K certified with over a decade navigating KRA compliance and financial strategy for Kenyan businesses.</p>
-          </div>
-        </div>
-        <div class="trust-founder-card">
-          <div class="trust-founder-photo" aria-label="Photo of Shadrack Kojack">
-            <!-- Replace with: <img src="shadrack.jpg" alt="Shadrack Kojack"> -->
-            <span>SK</span>
-          </div>
-          <div class="trust-founder-info">
-            <strong>Shadrack Kojack</strong>
-            <span>Co-Founder &amp; Audit Lead</span>
-            <p>Specialist in auditing and business model development with deep experience across SMEs and growing enterprises.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+</nav>
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<div class="mobile-drawer" id="mobileDrawer">
+  <button id="closeDrawer" style="background:none;border:none;font-size:1.5rem;float:right;">✕</button>
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="results.html">Results</a><a href="insights.html">Insights</a><a href="contact.html">Contact</a>
+  <a href="contact.html" style="margin-top:2rem;background:var(--blue-mid);color:white;text-align:center;padding:0.5rem;">Book a Call</a>
 </div>
 
-<!-- SERVICES TEASER -->
-<section id="services-teaser">
-  <div class="section-wrap">
-    <div class="section-header reveal">
-      <span class="label">What We Do</span>
-      <h2>Nine Services. One Trusted Partner.</h2>
-      <p>From KRA compliance to building full business models, we handle the financial complexity so you can focus on growing.</p>
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="label">KRA Registered Consultants</span>
+      <h1>Your finances, handled with <span style="color:var(--blue-mid);">modern precision</span></h1>
+      <p>Tax, audit, and financial advisory for Kenyan businesses and individuals. We bring clarity to complexity.</p>
+      <div class="hero-stats">
+        <div><div class="stat-number">300+</div><div>Clients</div></div>
+        <div><div class="stat-number">10+</div><div>Years</div></div>
+        <div><div class="stat-number">1200+</div><div>Returns filed</div></div>
+      </div>
+      <div style="margin-top:2rem;">
+        <a href="contact.html" class="btn btn-primary">Free consultation →</a>
+        <a href="services.html" class="btn btn-outline" style="margin-left:1rem;">View services</a>
+      </div>
     </div>
-    <div class="services-grid">
-      <article class="service-card reveal reveal-delay-1">
-        <span class="service-num">01</span>
-        <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><rect x="3" y="3" width="18" height="18" rx="2"/></svg></div>
-        <h3>Tax Consultancy</h3>
-        <p>Strategic individual and corporate tax planning that keeps you compliant with KRA while minimising your legitimate tax burden.</p>
-      </article>
-      <article class="service-card reveal reveal-delay-2">
-        <span class="service-num">02</span>
-        <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
-        <h3>Auditing</h3>
-        <p>Independent audits that give you, and your stakeholders, full confidence in your financial statements and internal controls.</p>
-      </article>
-      <article class="service-card reveal reveal-delay-3">
-        <span class="service-num">03</span>
-        <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
-        <h3>Professional Bookkeeping</h3>
-        <p>Accurate, up-to-date books that reflect the true health of your business, monthly, quarterly, or on a catch-up basis.</p>
-      </article>
-    </div>
-    <div class="view-all-wrap reveal">
-      <a href="services.html" class="view-all">View All Nine Services &#8594;</a>
-    </div>
+    <div><img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&auto=format" alt="Financial planning" style="width:100%; border-radius:var(--radius-md); box-shadow:var(--shadow-sm);"></div>
   </div>
 </section>
 
-<!-- ABOUT TEASER -->
-<section id="about-teaser">
-  <div class="section-wrap">
-    <div class="about-inner">
-      <div class="about-img-wrap reveal">
-        <div class="about-img-box">
-          <div class="about-img-initials" aria-hidden="true">
-            <span class="initials-big">ON</span>
-          </div>
-          <div class="about-img-caption">
-            <h4>Ochieng&#8217; Ng&#8217;ara</h4>
-            <p>Founder, Cashcare Financials</p>
-          </div>
-        </div>
-        <div class="about-gold-badge" aria-label="10 years of experience">
-          <strong>10+</strong>
-          <span>Years<br/>Practice</span>
-        </div>
-      </div>
-      <div class="about-content reveal reveal-delay-2">
-        <span class="label">About Us</span>
-        <h2>We Started Because You Deserve Better Than Generic Advice.</h2>
-        <p>We built Cashcare Financials because we kept seeing the same thing: smart business owners and hardworking individuals making financial decisions without proper guidance. Not boilerplate compliance. Actual strategy.</p>
-        <p>Our team combines deep KRA knowledge with real-world business experience. We know the Kenyan tax landscape, the deadlines, the amendments, the amnesty windows, and we use that knowledge to protect you and help you grow.</p>
-        <div class="about-blockquote">
-          <p>&#8220;We don&#8217;t just file your returns. We make sure your numbers are telling the right story, to KRA, to investors, and to you.&#8221;</p>
-        </div>
-        <div class="signature">Ochieng&#8217; Ng&#8217;ara</div>
-        <p style="font-size:13px;color:var(--muted);margin-top:6px;">Founder, Cashcare Financials</p>
-        <div style="margin-top:28px;display:flex;gap:14px;flex-wrap:wrap;">
-          <a href="about.html" class="btn-primary">Meet the Team <span class="arrow">&#8594;</span></a>
-          <a href="services.html" style="background:transparent;color:var(--text);padding:15px 32px;border-radius:4px;border:1.5px solid rgba(28,28,26,0.2);font-weight:500;font-size:15px;text-decoration:none;transition:border-color 0.2s;">Our Services</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<div class="trust-bar"><div class="container trust-items"><div class="trust-item">✓ KRA Registered</div><div class="trust-item">✓ ICPAK Aligned</div><div class="trust-item">✓ Data Protection Compliant</div><div class="trust-item">✓ Since 2014</div><div class="trust-item">✓ 98% retention</div></div></div>
 
-<!-- STATS -->
-<section id="stats" aria-label="Key statistics">
-  <div class="section-wrap">
-    <div class="stats-grid">
-      <div class="reveal reveal-delay-1">
-        <div class="stat-num" data-target="300" data-suffix="+">0</div>
-        <div class="stat-label">Clients Served</div>
-      </div>
-      <div class="stat-divider" aria-hidden="true"></div>
-      <div class="reveal reveal-delay-2">
-        <div class="stat-num" data-target="10" data-suffix="+">0</div>
-        <div class="stat-label">Years of Practice</div>
-      </div>
-      <div class="stat-divider" aria-hidden="true"></div>
-      <div class="reveal reveal-delay-3">
-        <div class="stat-num" data-target="1200" data-suffix="+">0</div>
-        <div class="stat-label">Returns Filed</div>
-      </div>
-      <div class="stat-divider" aria-hidden="true"></div>
-      <div class="reveal reveal-delay-4">
-        <div class="stat-num" data-target="9" data-suffix="">0</div>
-        <div class="stat-label">Core Services</div>
-      </div>
-    </div>
-  </div>
-</section>
+<section><div class="container"><div class="label">Core services</div><h2>Nine specialised offerings</h2><div class="services-grid"><div class="card"><h3>📊 Tax Consultancy</h3><p>Strategic planning & KRA compliance</p></div><div class="card"><h3>🔍 Auditing</h3><p>Independent assurance & controls</p></div><div class="card"><h3>📚 Bookkeeping</h3><p>Accurate monthly records</p></div></div><div style="margin-top:2rem;"><a href="services.html" class="btn btn-outline">All nine services →</a></div></div></section>
 
-<!-- TESTIMONIALS - all 4 -->
-<section id="testimonials" aria-label="Client testimonials">
-  <div class="section-wrap">
-    <div class="testimonials-header reveal">
-      <span class="label" style="color:var(--gold);">Client Stories</span>
-      <h2 style="color:var(--cream);margin-top:12px;">What Our Clients Say</h2>
-      <p style="color:rgba(248,245,239,0.55);margin-top:12px;">Real results for real businesses and individuals across Kenya.</p>
-    </div>
-    <div class="testimonials-grid">
-      <article class="testimonial-card reveal reveal-delay-1">
-        <div class="stars" aria-label="5 stars"><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span></div>
-        <p class="testimonial-quote">&#8220;Cashcare sorted out three years of overdue KRA filings for my shop. They handled everything, I didn&#8217;t have to stress for a single day. My PIN is clean and I finally sleep at night.&#8221;</p>
-        <div class="testimonial-author">
-          <div class="author-avatar" aria-hidden="true">JM</div>
-          <div><div class="author-name">James M.</div><div class="author-title">Retail Business Owner, Nairobi</div></div>
-        </div>
-      </article>
-      <article class="testimonial-card reveal reveal-delay-2">
-        <div class="stars" aria-label="5 stars"><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span></div>
-        <p class="testimonial-quote">&#8220;The business model they built helped us secure a bank loan we&#8217;d been trying to get for two years. Detailed, realistic, and it spoke the language the bank needed to hear.&#8221;</p>
-        <div class="testimonial-author">
-          <div class="author-avatar" aria-hidden="true">AK</div>
-          <div><div class="author-name">Amina K.</div><div class="author-title">Director, Logistics SME, Mombasa</div></div>
-        </div>
-      </article>
-      <article class="testimonial-card reveal reveal-delay-3">
-        <div class="stars" aria-label="5 stars"><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span></div>
-        <p class="testimonial-quote">&#8220;Our monthly PAYE and VAT used to be a nightmare. Now it&#8217;s completely off our plate. Cashcare is proactive, they remind us, file on time, and explain everything in plain language.&#8221;</p>
-        <div class="testimonial-author">
-          <div class="author-avatar" aria-hidden="true">PO</div>
-          <div><div class="author-name">Peter O.</div><div class="author-title">Managing Director, Tech Startup</div></div>
-        </div>
-      </article>
-      <article class="testimonial-card reveal reveal-delay-4">
-        <div class="stars" aria-label="5 stars"><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span></div>
-        <p class="testimonial-quote">&#8220;The cashflow projections gave us the confidence to expand into a second branch. For the first time, we actually understood our own numbers. That&#8217;s what good financial advice looks like.&#8221;</p>
-        <div class="testimonial-author">
-          <div class="author-avatar" aria-hidden="true">GN</div>
-          <div><div class="author-name">Grace N.</div><div class="author-title">Founder, Food &amp; Beverage Group</div></div>
-        </div>
-      </article>
-    </div>
-    <div style="margin-top:36px;" class="reveal">
-      <a href="results.html" style="font-size:14px;font-weight:600;color:var(--gold);text-decoration:none;display:inline-flex;align-items:center;gap:7px;">Read All Case Studies &#8594;</a>
-    </div>
-  </div>
-</section>
+<section style="background:var(--white);"><div class="container"><div class="hero-grid"><div><img src="https://images.unsplash.com/photo-1556740772-1a741367b93e?w=500&auto=format" alt="Team" style="width:100%; border-radius:var(--radius-md); box-shadow:var(--shadow-sm);"></div><div><span class="label">Leadership</span><h2>Ochieng’ Ng’ara & Shadrack Kojack</h2><p>Founders with deep KRA expertise and a decade of hands‑on experience. We don’t just file returns — we build financial strategies that withstand scrutiny.</p><a href="about.html" class="btn btn-primary">Meet the team →</a></div></div></div></section>
 
-<!-- RESULTS TEASER -->
-<section id="results-teaser">
-  <div class="section-wrap">
-    <div class="section-header reveal">
-      <span class="label">Case Studies</span>
-      <h2>Real Outcomes for Real Clients.</h2>
-      <p>Specificity builds trust. Here are three examples of what working with Cashcare Financials actually looks like.</p>
-    </div>
-    <div class="results-grid">
-      <article class="result-card reveal reveal-delay-1">
-        <span class="result-tag">Amnesty Filing</span>
-        <h3>Logistics SME, KRA Compliance Restored</h3>
-        <p>A Nairobi-based logistics company with 4 years of unfiled returns faced potential business suspension. We managed a full amnesty filing, negotiated penalty waivers, and restored full compliance status.</p>
-        <div class="result-outcome">
-          <span class="result-big">4yrs</span>
-          <span class="result-desc">Backlog cleared in 6 weeks. Zero business disruption.</span>
-        </div>
-      </article>
-      <article class="result-card reveal reveal-delay-2">
-        <span class="result-tag">Business Model</span>
-        <h3>Restaurant Group, Bank Financing Secured</h3>
-        <p>A growing food business needed a bankable financial model to secure a KES 8M expansion loan. We built a 3-year model with scenario analysis, unit economics, and a clear narrative for the lender.</p>
-        <div class="result-outcome">
-          <span class="result-big">KES 8M</span>
-          <span class="result-desc">Loan approved within 30 days of submission.</span>
-        </div>
-      </article>
-      <article class="result-card reveal reveal-delay-3">
-        <span class="result-tag">Tax &amp; Bookkeeping</span>
-        <h3>Retail Chain, Tax Savings Identified</h3>
-        <p>During a bookkeeping engagement for a 3-branch retail client, our review identified KES 240K in overpaid tax across two years. We filed an amendment and secured a refund while restructuring their VAT process.</p>
-        <div class="result-outcome">
-          <span class="result-big">KES 240K</span>
-          <span class="result-desc">Recovered in overpaid tax through amendment filing.</span>
-        </div>
-      </article>
-    </div>
-    <div style="margin-top:36px;" class="reveal">
-      <a href="results.html" class="view-all">View All Case Studies &#8594;</a>
-    </div>
-  </div>
-</section>
+<section><div class="container"><div class="label">Client outcomes</div><h2>Real results, documented</h2><div class="results-grid"><div class="card"><span class="label">Amnesty filing</span><h3>4 years of backlog cleared</h3><div class="stat-number">6 weeks</div><p>Full KRA compliance restored without business disruption.</p></div><div class="card"><span class="label">Business model</span><h3>KES 8M loan secured</h3><div class="stat-number">30 days</div><p>From rejection to approval with a bankable financial model.</p></div><div class="card"><span class="label">Tax recovery</span><h3>KES 240K refund</h3><div class="stat-number">Amendment</div><p>Overpaid tax identified and recovered via income tax amendment.</p></div></div><div style="margin-top:2rem;"><a href="results.html" class="btn btn-outline">All case studies →</a></div></div></section>
 
-<!-- INSIGHTS TEASER -->
-<section id="insights-teaser" style="background:var(--sand);">
-  <div class="section-wrap">
-    <div class="section-header reveal">
-      <span class="label">Insights</span>
-      <h2>Financial Knowledge, Plainly Spoken.</h2>
-      <p>No jargon. No filler. Just practical guidance for Kenyan businesses and individuals navigating tax and finance.</p>
-    </div>
-    <div class="insights-grid">
-      <article class="insight-card reveal reveal-delay-1">
-        <div class="insight-meta"><span class="insight-cat">Tax</span><span class="insight-date">May 2025</span></div>
-        <h3>KRA Amnesty 2025: Who Qualifies and How to Apply</h3>
-        <p>The KRA tax amnesty window is open. Here&#8217;s exactly who qualifies, what penalties are waived, and the steps to take before the deadline.</p>
-        <a href="insights.html" class="insight-read">Read More &#8594;</a>
-      </article>
-      <article class="insight-card reveal reveal-delay-2">
-        <div class="insight-meta"><span class="insight-cat">VAT</span><span class="insight-date">Apr 2025</span></div>
-        <h3>The 5 Most Common VAT Errors Kenyan SMEs Make</h3>
-        <p>From wrong tax codes to missed input claims, these are the VAT mistakes that quietly cost businesses money, and how to fix them.</p>
-        <a href="insights.html" class="insight-read">Read More &#8594;</a>
-      </article>
-      <article class="insight-card reveal reveal-delay-3">
-        <div class="insight-meta"><span class="insight-cat">Business Finance</span><span class="insight-date">Mar 2025</span></div>
-        <h3>Building a Cashflow Projection Your Bank Will Actually Believe</h3>
-        <p>Most cashflow projections are overly optimistic and instantly dismissed. Here&#8217;s what lenders actually look for, and how to build a model that holds up.</p>
-        <a href="insights.html" class="insight-read">Read More &#8594;</a>
-      </article>
-    </div>
-    <div style="margin-top:36px;" class="reveal">
-      <a href="insights.html" class="view-all">View All Insights &#8594;</a>
-    </div>
-  </div>
-</section>
+<div style="background:var(--blue-deep); color:white; text-align:center; padding:4rem 2rem;"><h2 style="color:white;">Ready for financial clarity?</h2><a href="contact.html" class="btn btn-primary" style="background:var(--blue-mid); color:white; margin-top:1rem;">Book a free consultation →</a></div>
 
-<!-- CTA BANNER -->
-<div id="cta-banner" role="complementary" aria-label="Call to action">
-  <div class="cta-inner">
-    <div class="cta-text">
-      <h2>Ready to Take Control of Your Financial Future?</h2>
-      <p>No pressure. No jargon. Just a real conversation about what you need.</p>
-    </div>
-    <a href="contact.html" class="btn-white">Book a Free Consultation</a>
-  </div>
-</div>
+<footer><div class="container footer-grid"><div><div class="logo" style="color:white;">Cashcare Financials</div><p style="margin-top:0.5rem;">Nairobi, Kenya</p></div><div><h4>Services</h4><a href="services.html">Tax</a><br><a href="services.html">Audit</a><br><a href="services.html">Bookkeeping</a></div><div><h4>Contact</h4><p>info@cashcare.co.ke<br>+254 700 000 000</p></div></div><div class="container" style="text-align:center; border-top:1px solid rgba(255,255,255,0.1); margin-top:2rem; padding-top:1rem;">© 2025 Cashcare Financials Consultancy</div></footer>
 
-<!-- FOOTER -->
-<footer role="contentinfo">
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <div class="footer-logo">Cashcare Financials</div>
-      <div class="footer-tagline">Consultancy</div>
-      <p>Expert tax, audit, and financial advisory services for Kenyan businesses and individuals, delivered with precision and care.</p>
-      <div class="footer-socials">
-        <a href="#" class="footer-social-link" aria-label="LinkedIn">
-          <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-        </a>
-        <a href="#" class="footer-social-link" aria-label="Twitter / X">
-          <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
-        </a>
-      </div>
-    </div>
-    <div class="footer-col">
-      <h4>Services</h4>
-      <ul class="footer-links">
-        <li><a href="services.html">Tax Consultancy</a></li>
-        <li><a href="services.html">Auditing</a></li>
-        <li><a href="services.html">Bookkeeping</a></li>
-        <li><a href="services.html">KRA Returns</a></li>
-        <li><a href="services.html">VAT &amp; PAYE</a></li>
-        <li><a href="services.html">Amnesty Filing</a></li>
-        <li><a href="services.html">Business Models</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Company</h4>
-      <ul class="footer-links">
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="results.html">Case Studies</a></li>
-        <li><a href="insights.html">Insights</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="#">Privacy Policy</a></li>
-        <li><a href="#">Terms of Service</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Contact</h4>
-      <ul class="footer-links">
-        <li><a href="mailto:info@cashcarefinancials.co.ke">info@cashcarefinancials.co.ke</a></li>
-        <li><a href="tel:+254700000000">+254 700 000 000</a></li>
-        <li><a>Nairobi, Kenya</a></li>
-        <li><a href="contact.html">Book a Consultation</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>&#169; 2025 Cashcare Financials Consultancy. All rights reserved.</p>
-    <p><a href="#">Privacy Policy</a> &middot; <a href="#">Terms</a></p>
-  </div>
-</footer>
-
-<script src="shared.js"></script>
 <script>
-  // Count-up on stats
-  function animateCount(el) {
-    const target = parseInt(el.dataset.target), suffix = el.dataset.suffix || '', dur = 1800, start = performance.now();
-    (function step(now) {
-      const p = Math.min((now-start)/dur,1), e = 1-Math.pow(1-p,3);
-      el.textContent = Math.floor(e*target).toLocaleString()+suffix;
-      if(p<1) requestAnimationFrame(step);
-    })(start);
-  }
-  new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{ if(e.isIntersecting){ e.target.querySelectorAll('[data-target]').forEach(animateCount); } });
-  },{threshold:0.3}).observe(document.getElementById('stats'));
+  const menuBtn = document.getElementById('menuBtn'), drawer = document.getElementById('mobileDrawer'), overlay = document.getElementById('drawerOverlay'), closeDrawer = document.getElementById('closeDrawer');
+  function open() { drawer.classList.add('open'); overlay.classList.add('open'); document.body.style.overflow = 'hidden'; }
+  function close() { drawer.classList.remove('open'); overlay.classList.remove('open'); document.body.style.overflow = ''; }
+  menuBtn.onclick = open; closeDrawer.onclick = close; overlay.onclick = close;
+  window.onscroll = () => document.querySelector('nav').style.background = window.scrollY > 50 ? 'white' : 'white';
 </script>
 </body>
 </html>

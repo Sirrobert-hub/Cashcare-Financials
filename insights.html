@@ -1,215 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<!DOCTYPE html>
+  <meta charset="UTF-8">
   <title>Insights | Cashcare Financials</title>
-  <meta name="description" content="Financial and tax insights for Kenyan businesses and individuals from Cashcare Financials."/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@1,400;1,500&family=Dancing+Script:wght@600&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="shared.css"/>
-  <style>
-.insights-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:60px; }
-.insight-card { background:var(--cream);border-radius:var(--radius);padding:36px;transition:box-shadow 0.3s,transform 0.3s;border:1px solid rgba(0,0,0,0.05); }
-.insight-card:hover { box-shadow:0 8px 32px rgba(0,0,0,0.08);transform:translateY(-3px); }
-.insight-meta { display:flex;align-items:center;gap:12px;margin-bottom:18px; }
-.insight-cat { font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);background:rgba(201,150,59,0.1);padding:3px 10px;border-radius:20px; }
-.insight-date { font-size:13px;color:var(--muted); }
-.insight-card h3 { font-size:19px;margin-bottom:10px; }
-.insight-card p { font-size:15px;margin-bottom:18px; }
-.insight-read { font-size:14px;font-weight:600;color:var(--green);text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:gap 0.2s; }
-.insight-read:hover { gap:10px;color:var(--gold); }
-.insight-read-time { font-size:12px;color:var(--muted);margin-left:auto; }
-@media(max-width:1024px){ .insights-grid{grid-template-columns:1fr 1fr;} }
-@media(max-width:640px){ .insights-grid{grid-template-columns:1fr;} }
-</style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css">
 </head>
 <body>
-<nav id="navbar" class="solid" role="navigation" aria-label="Main navigation">
-  <a href="index.html" class="nav-logo" aria-label="Cashcare Financials home">
-    <span class="nav-logo-top">Cashcare</span>
-    <span class="nav-logo-sub">Financials Consultancy</span>
-  </a>
-  <ul class="nav-links">
-    <li><a href="about.html">About</a></li>
-    <li><a href="services.html">Services</a></li>
-    <li><a href="results.html">Results</a></li>
-    <li><a href="insights.html">Insights</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-  <a href="contact.html" class="nav-cta">Book a Consultation</a>
-  <button class="hamburger" id="hamburger-btn" aria-label="Open menu">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-<div id="drawer-overlay"></div>
-<nav id="mobile-drawer" role="dialog" aria-label="Mobile navigation">
-  <button id="drawer-close" aria-label="Close menu">&#x2715;</button>
-  <a href="about.html">About</a>
-  <a href="services.html">Services</a>
-  <a href="results.html">Results</a>
-  <a href="insights.html">Insights</a>
-  <a href="contact.html">Contact</a>
-  <a href="contact.html" style="color:var(--gold);margin-top:16px;font-size:20px;">Book a Consultation &rarr;</a>
-</nav>
-
-<div class="page-hero">
-  <div class="page-hero-geo" aria-hidden="true"></div>
-  <div class="page-hero-inner section-wrap">
-    <span class="label">Insights</span>
-    <h1>Financial Knowledge, Plainly Spoken.</h1>
-    <p>No jargon. No filler. Just practical guidance for Kenyan businesses and individuals navigating tax and finance.</p>
+<nav>...</nav>
+<div class="container" style="padding-top: 6rem;">
+  <span class="label">Knowledge</span>
+  <h1>Financial intelligence, plainly spoken.</h1>
+  <div class="insights-grid">
+    <div class="card"><span class="label">Tax</span><h3>KRA Amnesty 2025: who qualifies</h3><p>Deadlines, penalties waived, step‑by‑step application process.</p><a href="contact.html">Read more →</a></div>
+    <div class="card"><span class="label">VAT</span><h3>5 common VAT errors Kenyan SMEs make</h3><p>How to avoid costly mistakes and claim what you’re owed.</p><a href="contact.html">Read more →</a></div>
+    <div class="card"><span class="label">Business finance</span><h3>Cashflow projections that banks believe</h3><p>Build a credible forecast, not a wishful dream.</p><a href="contact.html">Read more →</a></div>
   </div>
+  <div style="margin:3rem 0;"><a href="contact.html" class="btn btn-primary">Get personalised advice →</a></div>
 </div>
-
-<section style="background:var(--sand);">
-  <div class="section-wrap">
-    <div class="insights-grid">
-
-      <article class="insight-card reveal reveal-delay-1">
-        <div class="insight-meta">
-          <span class="insight-cat">Tax</span>
-          <span class="insight-date">May 2025</span>
-        </div>
-        <h3>KRA Amnesty 2025: Who Qualifies and How to Apply</h3>
-        <p>The KRA tax amnesty window is open. Here is exactly who qualifies, what penalties are waived, and the steps to take before the deadline closes.</p>
-        <div style="display:flex;align-items:center;justify-content:space-between;">
-          <a href="contact.html" class="insight-read">Read More &#8594;</a>
-          <span class="insight-read-time">5 min read</span>
-        </div>
-      </article>
-
-      <article class="insight-card reveal reveal-delay-2">
-        <div class="insight-meta">
-          <span class="insight-cat">VAT</span>
-          <span class="insight-date">Apr 2025</span>
-        </div>
-        <h3>The 5 Most Common VAT Errors Kenyan SMEs Make</h3>
-        <p>From wrong tax codes to missed input claims, these are the VAT mistakes that quietly cost businesses money, and how to fix them before your next filing.</p>
-        <div style="display:flex;align-items:center;justify-content:space-between;">
-          <a href="contact.html" class="insight-read">Read More &#8594;</a>
-          <span class="insight-read-time">7 min read</span>
-        </div>
-      </article>
-
-      <article class="insight-card reveal reveal-delay-3">
-        <div class="insight-meta">
-          <span class="insight-cat">Business Finance</span>
-          <span class="insight-date">Mar 2025</span>
-        </div>
-        <h3>Building a Cashflow Projection Your Bank Will Actually Believe</h3>
-        <p>Most cashflow projections are too optimistic and instantly dismissed. Here is what lenders actually look for and how to build a model that holds up to scrutiny.</p>
-        <div style="display:flex;align-items:center;justify-content:space-between;">
-          <a href="contact.html" class="insight-read">Read More &#8594;</a>
-          <span class="insight-read-time">6 min read</span>
-        </div>
-      </article>
-
-      <article class="insight-card reveal reveal-delay-1">
-        <div class="insight-meta">
-          <span class="insight-cat">PAYE</span>
-          <span class="insight-date">Feb 2025</span>
-        </div>
-        <h3>Understanding PAYE in Kenya: A Plain-Language Guide for Employers</h3>
-        <p>If you have employees, you are required to deduct and remit PAYE every month. Here is how it works, what the bands are, and the most common mistakes to avoid.</p>
-        <div style="display:flex;align-items:center;justify-content:space-between;">
-          <a href="contact.html" class="insight-read">Read More &#8594;</a>
-          <span class="insight-read-time">8 min read</span>
-        </div>
-      </article>
-
-      <article class="insight-card reveal reveal-delay-2">
-        <div class="insight-meta">
-          <span class="insight-cat">Bookkeeping</span>
-          <span class="insight-date">Jan 2025</span>
-        </div>
-        <h3>Why Clean Books Are Your Best Business Insurance</h3>
-        <p>Bad bookkeeping does not just cause tax problems. It causes bad decisions, missed opportunities, and blind spots in your own business. Here is what to do about it.</p>
-        <div style="display:flex;align-items:center;justify-content:space-between;">
-          <a href="contact.html" class="insight-read">Read More &#8594;</a>
-          <span class="insight-read-time">5 min read</span>
-        </div>
-      </article>
-
-      <article class="insight-card reveal reveal-delay-3">
-        <div class="insight-meta">
-          <span class="insight-cat">Compliance</span>
-          <span class="insight-date">Dec 2024</span>
-        </div>
-        <h3>KRA Compliance Checklist: 12 Things Every Business Must Do Annually</h3>
-        <p>A practical, downloadable checklist of every annual tax obligation a Kenyan business has and when each one is due throughout the year.</p>
-        <div style="display:flex;align-items:center;justify-content:space-between;">
-          <a href="contact.html" class="insight-read">Read More &#8594;</a>
-          <span class="insight-read-time">4 min read</span>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-<div id="cta-banner" role="complementary">
-  <div class="cta-inner">
-    <div class="cta-text">
-      <h2>Ready to Take Control of Your Financial Future?</h2>
-      <p>No pressure. No jargon. Just a real conversation about what you need.</p>
-    </div>
-    <a href="contact.html" class="btn-white">Book a Free Consultation</a>
-  </div>
-</div>
-
-<footer role="contentinfo">
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <div class="footer-logo">Cashcare Financials</div>
-      <div class="footer-tagline">Consultancy</div>
-      <p>Expert tax, audit, and financial advisory for Kenyan businesses and individuals, delivered with precision and care.</p>
-      <div class="footer-socials">
-        <a href="#" class="footer-social-link" aria-label="LinkedIn">
-          <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-        </a>
-        <a href="#" class="footer-social-link" aria-label="Twitter">
-          <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
-        </a>
-      </div>
-    </div>
-    <div class="footer-col">
-      <h4>Services</h4>
-      <ul class="footer-links">
-        <li><a href="services.html">Tax Consultancy</a></li>
-        <li><a href="services.html">Auditing</a></li>
-        <li><a href="services.html">Bookkeeping</a></li>
-        <li><a href="services.html">KRA Returns</a></li>
-        <li><a href="services.html">VAT &amp; PAYE</a></li>
-        <li><a href="services.html">Amnesty Filing</a></li>
-        <li><a href="services.html">Business Models</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Company</h4>
-      <ul class="footer-links">
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="results.html">Case Studies</a></li>
-        <li><a href="insights.html">Insights</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="#">Privacy Policy</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Contact</h4>
-      <ul class="footer-links">
-        <li><a href="mailto:info@cashcarefinancials.co.ke">info@cashcarefinancials.co.ke</a></li>
-        <li><a href="tel:+254700000000">+254 700 000 000</a></li>
-        <li><a>Nairobi, Kenya</a></li>
-        <li><a href="contact.html">Book a Consultation</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>&copy; 2025 Cashcare Financials Consultancy. All rights reserved.</p>
-    <p><a href="#">Privacy Policy</a> &middot; <a href="#">Terms</a></p>
-  </div>
-</footer>
-<script src="shared.js"></script>
+<footer>...</footer>
 </body>
 </html>
